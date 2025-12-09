@@ -1,0 +1,45 @@
+{
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "packageManager": "npm@10.1.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.5.1",
+    "@unocss/reset": "^0.59.4",
+    "unocss": "^66.5.10"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.27.3",
+    "@nuxt/devtools": "latest",
+    "@unocss/eslint-plugin": "^0.59.4",
+    "@unocss/nuxt": "^0.59.4",
+    "@unocss/transformer-directives": "^0.59.4",
+    "@unocss/transformer-variant-group": "^0.59.4",
+    "eslint": "^9.16.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "nuxt": "^4.2.1",
+    "sass": "^1.77.8",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.7.2",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vuetify": "^3.9.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
