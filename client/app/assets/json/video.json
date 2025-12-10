@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "description": "РЕАЛЬНОЕ СОБЕСЕДОВАНИЕ НА FRONTEND РАЗРАБОТЧИКА С ЗП 260-290К MIDDLE/SENIOR",
+    "link": "/_nuxt/assets/video/1.mp4",
+    "img": "https://get-save.ru/img-proxy/i.ytimg.com/vi_webp/Tku5PNP9ZZs/maxresdefault.webp"
+  },
+  {
+    "id": 2,
+    "description": "РЕАЛЬНОЕ СОБЕСЕДОВАНИЕ",
+    "link": "/_nuxt/assets/video/2.mp4",
+    "img": "https://i.ytimg.com/vi/WGqjIntME50/maxresdefault.jpg"
+  },
+  {
+    "id": 3,
+    "description": "собеседование на junior хорошее по скриптам",
+    "link": "/_nuxt/assets/video/3.mp4",
+    "img": "https://get-save.ru/img-proxy/i.ytimg.com/vi/ScRTey_dvhI/maxresdefault.jpg"
+  },
+  {
+    "id": 4,
+    "description": "Открытое собеседование Vuejs Junior Frontend-разработчик",
+    "link": "/_nuxt/assets/video/4.mp4",
+    "img": "https://get-save.ru/img-proxy/i.ytimg.com/vi/IeZt4h0w0Kg/maxresdefault.jpg"
+  },
+  {
+    "id": 5,
+    "description": "16 САМЫХ ПОПУЛЯРНЫХ вопросов по JavaScript на собеседованиях",
+    "link": "/_nuxt/assets/video/5.mp4",
+    "img": "https://get-save.ru/img-proxy/i.ytimg.com/vi/3kLS5UPvfss/sddefault.jpg"
+  }
+]

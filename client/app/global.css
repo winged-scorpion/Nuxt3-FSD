@@ -1,5 +1,123 @@
 /* You can put there global styles */
 
-* {
+*{
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+.pageContainer{
+    width: 100%;
+    max-width: 1600px;
+    padding: 15px 15px 60px 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+html{
+
+}
+body{
+
+}
+.btn{
+    margin:10px 10px 10px 0;
+    padding: 5px;
+    font-size: 18px;
+}
+.container{
+    width: 100%;
+    margin: auto;
+    max-width: 960px;
+}
+
+.baseInput{
+    margin: 0 0 15px 0;
+    /*width: 20%;*/
+    /*max-width: 250px;*/
+    .v-field__field{
+        border-bottom: solid 1px #000;
+        border-left: solid 1px #000;
+        text-indent: 10px;
+    }
+    .v-field-label{
+        text-indent: 10px;
+    }
+    .v-field-label--floating{
+        text-indent: 7px;
+    }
+}
+.base-form-input{
+    input{
+        border-bottom: solid 1px #000;
+        border-left: solid 1px #000;
+        text-indent: 10px;
+        outline: none;
+    }
+    label{
+        font-size: 12px;
+    }
+    .base-form-input__error{
+        color: red;
+        font-size: 12px;
+    }
+}
+.base-button{
+    padding: 5px;
+}
+.shadow{
+
+}
+
+.animateRotateBg {
+    height: 5px;
+    width: 100%;
+    animation: backgroundRotate 1s infinite linear;
+    -webkit-animation: backgroundRotate 1s infinite linear;
+    background: rgb(48,255,144); /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(48,255,144,1) 0%, rgba(237,45,237,1) 25%, rgba(201,152,38,1) 50%, rgba(48,255,230,1) 75%, rgba(48,255,144,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(48,255,144,1)), color-stop(25%,rgba(237,45,237,1)), color-stop(50%,rgba(201,152,38,1)), color-stop(75%,rgba(48,255,230,1)), color-stop(100%,rgba(48,255,144,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(48,255,144,1) 0%,rgba(237,45,237,1) 25%,rgba(201,152,38,1) 50%,rgba(48,255,230,1) 75%,rgba(48,255,144,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30ff90', endColorstr='#30ff90',GradientType=1 ); /* IE6-9 */
+}
+@-webkit-keyframes backgroundRotate {
+    from {
+        background-position: -2000px;
+    }
+    to {
+        background-position: 0px;
+    }
+}
+
+@keyframes backgroundRotate {
+    from {
+        background-position: -2000px;
+    }
+    to {
+        background-position: 0px;
+    }
+}
+.animate-pulse-warning {
+    animation: animate_pulse 1.5s infinite;
+}
+
+.animate-pulse:hover {
+    animation: none;
+}
+
+@keyframes animate_pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(228, 25, 49, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(228, 25, 49, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(228, 25, 49, 0);
+    }
+}
+
+
