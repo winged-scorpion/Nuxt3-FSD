@@ -4,11 +4,12 @@ export default defineNuxtConfig({
   alias: {
     '@': '../client',
   },
+  compatibilityDate: '2025-12-15',
   modules: [
     '@unocss/nuxt',
     '@pinia/nuxt',
   ],
-  css: ['@/app/global.css', '@unocss/reset/tailwind.css', 'vuetify/lib/styles/main.sass'],
+  css: ['@/app/global.css', '@unocss/reset/tailwind.css'],
 
   srcDir: 'client',
 
@@ -42,4 +43,9 @@ export default defineNuxtConfig({
       // Auto-import all components from shared directory.
     },
   ],
+  vite: {
+    server: {
+      allowedHosts: [process.env.host],
+    },
+  },
 })

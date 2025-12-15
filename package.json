@@ -21,7 +21,11 @@
     "@yeger/vue-masonry-wall": "^5.0.15",
     "@types/vuelidate": "^0.7.21",
     "@vee-validate/nuxt": "^4.13.2",
-    "@vee-validate/yup": "^4.15.1"
+    "@vee-validate/yup": "^4.15.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
@@ -34,7 +38,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "nuxt": "^4.2.1",
-    "sass": "^1.77.8",
+    "sass": "^1.96.0",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.2",
     "vite-plugin-vuetify": "^2.0.4",

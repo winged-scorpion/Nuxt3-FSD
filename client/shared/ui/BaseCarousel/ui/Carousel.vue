@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { IMG_LIST } from '../api/imgConstant'
-import type { ModalContentLiveCode } from '../model/ModalContentLiveCode'
+import type { BaseCarouselInt } from '../model/BaseCarouselInt'
 import { TileModalContent } from '~/shared/ui/TheTileModalContent'
 
 const props = defineProps({
@@ -10,7 +10,7 @@ const props = defineProps({
     required: false,
   },
   taskList: {
-    type: Object as PropType<ModalContentLiveCode>,
+    type: Object as PropType<BaseCarouselInt>,
     required: false,
   },
   sliderImg: {

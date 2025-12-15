@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { ModalContentLiveCode } from '../model/modal'
+import type { ModalContentLiveCode } from '../model/ModalContentLiveCode'
 import { Carousel } from '~/shared/ui/BaseCarousel'
 
 const props = defineProps({
