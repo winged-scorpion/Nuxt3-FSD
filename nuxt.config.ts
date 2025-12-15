@@ -32,6 +32,7 @@ export default defineNuxtConfig({
   },
   plugins: [
     { src: '~/shared/plugins/vuetify' },
+    { src: '~/shared/plugins/vue-masonry-wall' },
   ],
 
   components: [
