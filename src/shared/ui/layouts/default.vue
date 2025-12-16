@@ -1,7 +1,22 @@
 <script setup lang="ts">
-import CustomLayout from '#layouts/default.vue'
+import { HeaderComponent } from '../../../widgets/TheHeader'
+import { FooterComponent } from '~/widgets/TheFooter'
+import { Preloader } from '~/shared/ui/ThePreloader'
+
+const pageLoader = ref(true)
+
+onMounted(() => {
+  pageLoader.value = false
+})
 </script>
 
 <template>
-  <NuxtLayout />
+  <v-app>
+    <v-main>
+      <Preloader v-if="pageLoader" />
+      <HeaderComponent />
+      <slot />
+      <FooterComponent />
+    </v-main>
+  </v-app>
 </template>

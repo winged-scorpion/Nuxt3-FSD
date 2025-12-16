@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   alias: {
-    '@': '../client',
+    '@': '../src',
   },
   compatibilityDate: '2025-12-15',
   modules: [
@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   ],
   css: ['@/app/global.css', '@unocss/reset/tailwind.css'],
 
-  srcDir: 'client',
+  srcDir: 'src',
 
   future: {
     compatibilityVersion: 4,
@@ -32,8 +32,8 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   plugins: [
-    { src: '~/shared/plugins/vuetify' },
-    { src: '~/shared/plugins/vue-masonry-wall' },
+    { src: '@/shared/plugins/vuetify' },
+    { src: '@/shared/plugins/vue-masonry-wall' },
   ],
 
   components: [
