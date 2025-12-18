@@ -1,15 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  alias: {
-    '@': '../src',
-  },
   compatibilityDate: '2025-12-15',
   modules: [
     '@unocss/nuxt',
     '@pinia/nuxt',
   ],
-  css: ['@/app/global.css', '@unocss/reset/tailwind.css'],
+  css: ['@/app/global.css', '@unocss/reset/tailwind.css', 'vuetify/lib/styles/main.sass'],
 
   srcDir: 'src',
 
@@ -25,8 +22,8 @@ export default defineNuxtConfig({
   },
 
   dir: {
-    pages: './app/routes',
-    layouts: './shared/ui/layouts',
+    pages: 'app/routes',
+    layouts: 'shared/ui/layouts',
   },
   build: {
     transpile: ['vuetify'],

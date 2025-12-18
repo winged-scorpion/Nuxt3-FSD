@@ -4,5 +4,11 @@
     "description": "РЕАЛЬНОЕ FRONTEND VUE СОБЕСЕДОВАНИЕ НА ЗП 280К (REACT МЕРТВ)! MIDDLE/SENIOR ФРОНТЕНД СОБЕСЕДОВАНИЕ!",
     "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/YYOVU2GkV3Q?si=RFayeahQX8N7cypa\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
     "img": "https://get-save.ru/img-proxy/i.ytimg.com/vi/3kLS5UPvfss/sddefault.jpg"
+  },
+  {
+    "id": 2,
+    "description": "Собеседование Middle Frontend: JS + React + TS + GraphQL + RTK",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/9V0APJvQtL4?si=Xal1ps4KS9aXwGKA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "img.youtube.com/vi/9V0APJvQtL4/0.jpg"
   }
 ]

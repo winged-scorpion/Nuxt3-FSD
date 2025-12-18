@@ -2,6 +2,7 @@
 import type { PropType } from 'vue'
 import type { ModalContentLiveCode } from '../model/ModalContentLiveCode'
 import { Carousel } from '~/shared/ui/BaseCarousel'
+import { VideoPlayer } from '~/shared/ui/BaseVideo'
 
 const props = defineProps({
   task: {
@@ -26,7 +27,7 @@ const props = defineProps({
   >
     <div
       class="modal__body"
-      :class="{ 'liveCode-modal': typeContent === 'livecode'}"
+      :class="{ 'liveCode-modal': typeContent === 'livecode' }"
     >
       <div v-if="typeContent === 'livecode'">
         <Carousel
@@ -96,5 +97,4 @@ const props = defineProps({
   height: 500px;
 
 }
-
 </style>
