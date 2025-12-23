@@ -3,25 +3,18 @@ import type { VideoList } from '~/pages/ItKitchenPage/model'
 import { getJsonFunction } from '~/shared/api/base/getJson'
 
 const itKitchen: VideoList[] = await getJsonFunction('kitchen')
-const videoList = itKitchen
-function openVideo(id: number) {
-  // const itemVideo: VideoList | undefined = videoList.find(item => item.id === id)
-  // showVideo.video = itemVideo.link
-  // showVideo.taskHead = itemVideo.description
-  // modalVisible.value = true
-}
 </script>
 
 <template>
   <div class="player player-wrap">
     <div
-      v-for="(item, index) in videoList"
+      v-for="(item, index) in itKitchen"
       :key="index"
       class="player__tile"
     >
       <div
         class="player__card"
-        @click="openVideo(item.id)"
+        @click="$emit('openVideo', item.id)"
       >
         <v-icon class="player__play">
           mdi-play-box

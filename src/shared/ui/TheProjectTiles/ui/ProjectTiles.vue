@@ -3,20 +3,22 @@ import type { PropType } from 'vue'
 import { Carousel } from '~/shared/ui/BaseCarousel'
 import { Button } from '~/shared/ui/BaseButton/'
 import { Details } from '~/shared/ui/BaseDetails'
-import type { ProjectCompanyList } from '~/shared/model/projectListSlider'
+import { useProjectList } from '~/shared/ui/TheDraggingSlider/api/useProjectList'
 
-const props = defineProps({
-  projectArr: {
-    type: Object as PropType<ProjectCompanyList>,
-    required: true,
-  },
-})
+const projectListStore = useProjectList()
+projectListStore.getProjectList()
+
+const projectListArrBase = computed(() => projectListStore.outProduct)
 const subHead = 'Как проходила работа:'
 const numGenerate = (max: number) => Math.floor(Math.random() * max)
 </script>
 
 <template>
-  <div class="projectList">
+  <div
+    v-for="projectArr of projectListArrBase"
+    :key="numGenerate(5000)"
+    class="projectList"
+  >
     <div class="project-wrap">
       <div class="project-wrap__head">
         <h3>{{ projectArr?.name }} - {{ projectArr?.temp }}</h3>

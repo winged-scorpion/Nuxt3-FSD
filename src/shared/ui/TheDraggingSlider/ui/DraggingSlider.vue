@@ -1,23 +1,21 @@
 <script setup lang="ts">
 import { getJsonFunction } from "~/shared/api/base/getJson"
 import type { ProjectCompanyList } from "~/shared/model/projectListSlider"
+import {useProjectList} from "~/shared/ui/TheDraggingSlider/api/useProjectList";
 
 const projectList = await getJsonFunction('project');
 let projectListArr = reactive(<ProjectCompanyList[]>projectList)
-
+const projectListStore = useProjectList()
+projectListStore.getProjectList()
 const tickLabels = Object.assign({}, projectListArr.map((el) => el.temp))
 const thumbLabels = projectListArr.map((el) => el.name)
-
-defineProps({
-  modelValue: Array
-});
-
-let emit = defineEmits(['update:modelValue', 'updateProjectList']);
 const rangeReactive = reactive([0, thumbLabels.length - 1])
 
 function updateRangeSlider(item: [number, number]) {
   Object.assign(rangeReactive, item)
+  projectListStore.getProjectList(item)
 }
+
 </script>
 
 <template>
@@ -39,7 +37,6 @@ function updateRangeSlider(item: [number, number]) {
       min="0"
       @update:modelValue="updateRangeSlider"
       v-model="rangeReactive"
-      @end="emit('updateProjectList',rangeReactive)"
   />
 </template>
 

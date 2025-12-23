@@ -3,18 +3,30 @@ import { ref } from 'vue'
 import { BaseH1 } from '../../../widgets/BaseH1'
 import { Modal } from '~/shared/ui/BaseModal'
 import { VideoTileContainer } from '~/shared/ui/TheVideoTileContainer'
+import type { VideoList } from '~/pages/ItKitchenPage/model'
+import { getJsonFunction } from '~/shared/api/base/getJson'
 
 const showVideo = reactive({
   taskHead: '',
   video: '',
 })
 const modalVisible = ref(false)
+const itKitchen: VideoList[] = await getJsonFunction('kitchen')
+const videoList = itKitchen
+function openVideoTest(id: number) {
+  const itemVideo: VideoList | undefined = videoList.find(item => item.id === id)
+  showVideo.video = itemVideo.link
+  showVideo.taskHead = itemVideo.description
+  modalVisible.value = true
+}
 </script>
 
 <template>
   <div class="pageContainer">
     <BaseH1 />
-    <VideoTileContainer />
+    <VideoTileContainer
+      @open-video="openVideoTest"
+    />
   </div>
   <Modal
     :task="showVideo"
@@ -47,6 +59,4 @@ const modalVisible = ref(false)
 .mh {
   min-height: 76px;
 }
-
-
 </style>
