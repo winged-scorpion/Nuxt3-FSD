@@ -1,23 +1,29 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { ModalContentLiveCode } from '../model/ModalContentLiveCode'
+import type { ModalLiveCodeContent, ModalContentVideo } from '../model/ModalContent'
 import { Carousel } from '~/shared/ui/BaseCarousel'
 import { VideoPlayer } from '~/shared/ui/BaseVideo'
+import { useModal } from "~/shared/scope/useModal";
 
-const props = defineProps({
-  task: {
-    type: Object as PropType<ModalContentLiveCode>,
-    required: true,
-  },
-  typeContent: {
-    type: String,
-    required: true,
-  },
-  visible: {
-    type: Boolean,
-    required: true,
-  },
-})
+const modalStore = useModal()
+const typeContent = ref('')
+const visible = ref(false)
+const video = reactive(<ModalContentVideo>{})
+
+watch(() => modalStore.setVideo, () => {
+  if(modalStore.setVideo){
+    visible.value = true
+    typeContent.value = 'video'
+    Object.assign(video,modalStore.outVideoModal)
+  }else{
+    visible.value = false
+    typeContent.value = ''
+  }
+}, { deep: true })
+
+function closed() {
+  modalStore.setVideo = null
+}
 </script>
 
 <template>
@@ -39,14 +45,14 @@ const props = defineProps({
       </div>
       <div v-if="typeContent === 'video'">
         <VideoPlayer
-          :link="task.video"
-          :name="task.taskHead"
+          :link="video.link"
+          :name="video.description"
         />
       </div>
       <v-btn
         text="&#x2716;"
         density="compact"
-        @click="$emit('closed')"
+        @click="closed"
       />
     </div>
   </div>

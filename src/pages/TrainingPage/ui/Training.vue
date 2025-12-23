@@ -39,7 +39,6 @@ const tabNav = [
 </script>
 
 <template>
-  <div class="pageContainer">
     <BaseH1 />
     <div class="d-flex ga-5 align-center mb-5">
       <span>Табы</span>
@@ -72,7 +71,6 @@ const tabNav = [
       />
       <div />
     </div>
-  </div>
 </template>
 
 <style scoped>

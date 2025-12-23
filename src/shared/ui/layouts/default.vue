@@ -2,6 +2,7 @@
 import { HeaderComponent } from '../../../widgets/TheHeader'
 import { FooterComponent } from '~/widgets/TheFooter'
 import { Preloader } from '~/shared/ui/ThePreloader'
+import { Modal } from '~/shared/ui/BaseModal'
 
 const pageLoader = ref(true)
 
@@ -15,8 +16,11 @@ onMounted(() => {
     <v-main>
       <Preloader v-if="pageLoader" />
       <HeaderComponent />
-      <slot />
+      <div class="pageContainer">
+        <slot />
+      </div>
       <FooterComponent />
+      <Modal />
     </v-main>
   </v-app>
 </template>

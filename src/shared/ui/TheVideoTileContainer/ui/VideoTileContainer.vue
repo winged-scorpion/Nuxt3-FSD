@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { useVideoList } from '~/shared/scope/useVideoList'
-import type {VideoList} from "~/pages/ItKitchenPage/model";
+import type { VideoList } from '~/pages/ItKitchenPage/model'
+import { useModal } from "~/shared/scope/useModal"
+
 const videoListState = useVideoList()
+const modalState = useModal()
 await videoListState.getVideoList()
 const itKitchen = reactive(<VideoList[]>videoListState.setVideoList)
+
+function setVideoId(item: VideoList) {
+  modalState.initVideoModal(item)
+}
+
 </script>
 
 <template>
+
   <div class="player player-wrap">
     <div
       v-for="(item, index) in itKitchen"
@@ -15,7 +24,7 @@ const itKitchen = reactive(<VideoList[]>videoListState.setVideoList)
     >
       <div
         class="player__card"
-        @click="$emit('openVideo', item.id)"
+        @click="setVideoId(item)"
       >
         <v-icon class="player__play">
           mdi-play-box

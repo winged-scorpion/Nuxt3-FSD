@@ -7,7 +7,7 @@ export interface VideoListState {
 }
 
 export const useVideoList = defineStore('videoList', {
-  state: (): VideoListState => <VideoListState>({
+  state: (): VideoListState => ({
     setVideoList: null,
   }),
   getters: {
