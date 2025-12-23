@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getJsonFunction } from "~/shared/api/base/getJson"
 import type { ProjectCompanyList } from "~/shared/model/projectListSlider"
-import {useProjectList} from "~/shared/ui/TheDraggingSlider/api/useProjectList";
+import {useProjectList} from "~/shared/scope/useProjectList";
 
 const projectList = await getJsonFunction('project');
 let projectListArr = reactive(<ProjectCompanyList[]>projectList)

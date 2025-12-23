@@ -1,3 +1,3 @@
-export * from './ui'
-export * from './model'
-export * from './api'
+import HomePage from './ui/HomePage.vue'
+
+export { HomePage }

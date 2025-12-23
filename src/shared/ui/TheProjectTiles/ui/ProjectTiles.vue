@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import { Carousel } from '~/shared/ui/BaseCarousel'
 import { Button } from '~/shared/ui/BaseButton/'
 import { Details } from '~/shared/ui/BaseDetails'
-import { useProjectList } from '~/shared/ui/TheDraggingSlider/api/useProjectList'
+import { useProjectList } from '~/shared/scope/useProjectList'
 
 const projectListStore = useProjectList()
 projectListStore.getProjectList()
@@ -59,7 +58,10 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
           <section>
             <div><strong class="subHead">Стек:</strong></div>
             <div class="stag">
-              <span v-for="item of projectItem.stack">
+              <span
+                v-for="(item, index) of projectItem.stack"
+                :key="index"
+              >
                 {{ item }}
               </span>
             </div>
@@ -71,7 +73,8 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
             <div><strong class="subHead">Что было сделано:</strong></div>
             <ol>
               <li
-                v-for="item of projectItem.work"
+                v-for="(item, index) of projectItem.work"
+                :key="index"
               >
                 {{ item }}
               </li>
@@ -208,7 +211,7 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
           &:after {
             display: block;
             content: '';
-            background: url("~/assets/images/saimon/not_work.webp") no-repeat;
+            background: url("~/app/assets/images/saimon/not_work.webp") no-repeat;
             width: 200px;
             height: 200px;
             background-size: contain;

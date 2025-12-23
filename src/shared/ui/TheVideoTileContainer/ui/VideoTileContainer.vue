@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { VideoList } from '~/pages/ItKitchenPage/model'
-import { getJsonFunction } from '~/shared/api/base/getJson'
-
-const itKitchen: VideoList[] = await getJsonFunction('kitchen')
+import { useVideoList } from '~/shared/scope/useVideoList'
+import type {VideoList} from "~/pages/ItKitchenPage/model";
+const videoListState = useVideoList()
+await videoListState.getVideoList()
+const itKitchen = reactive(<VideoList[]>videoListState.setVideoList)
 </script>
 
 <template>
