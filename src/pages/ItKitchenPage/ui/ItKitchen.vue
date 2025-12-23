@@ -5,7 +5,8 @@ import { Modal } from '~/shared/ui/BaseModal'
 import { VideoTileContainer } from '~/shared/ui/TheVideoTileContainer'
 import type { VideoList } from '~/pages/ItKitchenPage/model'
 import { getJsonFunction } from '~/shared/api/base/getJson'
-import { useVideoList } from '~/shared/store/useVideoList'
+
+
 
 const showVideo = reactive({
   taskHead: '',
@@ -13,6 +14,7 @@ const showVideo = reactive({
 })
 const modalVisible = ref(false)
 const itKitchen: VideoList[] = await getJsonFunction('kitchen')
+
 const videoList = itKitchen
 function openVideoTest(id: number) {
   const itemVideo: VideoList | undefined = videoList.find(item => item.id === id)
@@ -20,7 +22,6 @@ function openVideoTest(id: number) {
   showVideo.taskHead = itemVideo.description
   modalVisible.value = true
 }
-
 
 </script>
 
