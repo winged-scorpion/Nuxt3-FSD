@@ -1,1 +1,3 @@
-export * from './ui'
+import DraggingSlider from './ui/DraggingSlider.vue'
+
+export { DraggingSlider }

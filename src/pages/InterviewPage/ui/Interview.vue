@@ -4,8 +4,6 @@ import { Interview } from '~/shared/ui/TheInterview'
 </script>
 
 <template>
-  <div class="pageContainer">
-    <BaseH1 />
-    <Interview />
-  </div>
+  <BaseH1 />
+  <Interview />
 </template>

@@ -22,19 +22,17 @@ function openDialog(taskId: number) {
 </script>
 
 <template>
-  <div class="pageContainer">
-    <BaseH1 />
-    <MasonryWall :items="taskList" :ssr-columns="1" :column-width="300" :gap="16">
-      <template #default="{ item, index }">
-        <LiveCodeTile
-          :key="index"
-          :tile-text="String(item[0])"
-          :style-background="randomBackground()"
-          @click="openDialog(index)"
-        />
-      </template>
-    </MasonryWall>
-  </div>
+  <BaseH1 />
+  <MasonryWall :items="taskList" :ssr-columns="1" :column-width="300" :gap="16">
+    <template #default="{ item, index }">
+      <LiveCodeTile
+        :key="index"
+        :tile-text="String(item[0])"
+        :style-background="randomBackground()"
+        @click="openDialog(index)"
+      />
+    </template>
+  </MasonryWall>
   <Modal
     :task="taskListArr"
     type-content="livecode"

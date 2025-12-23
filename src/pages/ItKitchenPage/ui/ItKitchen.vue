@@ -5,6 +5,7 @@ import { Modal } from '~/shared/ui/BaseModal'
 import { VideoTileContainer } from '~/shared/ui/TheVideoTileContainer'
 import type { VideoList } from '~/pages/ItKitchenPage/model'
 import { getJsonFunction } from '~/shared/api/base/getJson'
+import { useVideoList } from '~/shared/store/useVideoList'
 
 const showVideo = reactive({
   taskHead: '',
@@ -19,15 +20,16 @@ function openVideoTest(id: number) {
   showVideo.taskHead = itemVideo.description
   modalVisible.value = true
 }
+
+
 </script>
 
 <template>
-  <div class="pageContainer">
-    <BaseH1 />
-    <VideoTileContainer
-      @open-video="openVideoTest"
-    />
-  </div>
+  <BaseH1 />
+
+  <VideoTileContainer
+    @open-video="openVideoTest"
+  />
   <Modal
     :task="showVideo"
     type-content="video"

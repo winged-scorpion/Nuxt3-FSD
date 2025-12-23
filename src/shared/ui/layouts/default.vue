@@ -15,7 +15,9 @@ onMounted(() => {
     <v-main>
       <Preloader v-if="pageLoader" />
       <HeaderComponent />
-      <slot />
+      <div class="pageContainer">
+        <slot />
+      </div>
       <FooterComponent />
     </v-main>
   </v-app>

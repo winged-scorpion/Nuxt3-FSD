@@ -5,9 +5,7 @@ import { ProjectTiles } from '~/shared/ui/TheProjectTiles'
 </script>
 
 <template>
-  <div class="pageContainer">
-    <BaseH1 />
-    <DraggingSlider />
-    <ProjectTiles />
-  </div>
+  <BaseH1 />
+  <DraggingSlider />
+  <ProjectTiles />
 </template>
