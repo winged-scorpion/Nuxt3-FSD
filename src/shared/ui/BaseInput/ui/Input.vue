@@ -1,54 +1,53 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { SchemaItem } from "~/model/schema"
-import {defineProps} from "vue"
-import type {InputHidden} from "~/model/inputList"
-
+import { defineProps } from 'vue'
+import type { SchemaItem } from '../model/SchemaItem'
+import type { InputHidden } from '../model/InputList'
 
 const props = defineProps({
   schema: {
     type: Object as PropType<SchemaItem>,
-    required: true
+    required: true,
   },
   inputType: {
     type: String,
-    required: false
+    required: false,
   },
   value: {
     type: String,
-    required: false
+    required: false,
   },
   show: {
     type: Object as PropType<InputHidden>,
-    required: false
-  }
-});
+    required: false,
+  },
+})
 </script>
 
 <template>
   <div
-      class="base-form-input"
-      :class=schema?.classStyle
+    class="base-form-input"
+    :class="schema?.classStyle"
   >
     <label v-if="schema?.label">{{ schema.label }}</label>
     <div class="base-form-input__wrap">
       <Field
-          v-if="inputType === 'number'"
-          :name=schema?.name
-          :type=inputType
-          v-model.number="props.value"
-          @input="$emit('update:model-value', $event.target.value)"
+        v-if="inputType === 'number'"
+        v-model.number="props.value"
+        :name="schema?.name"
+        :type="inputType"
+        @input="$emit('update:model-value', $event.target.value)"
       />
       <Field
-          v-else
-          :name=schema?.name
-          :type=inputType
-          :placeholder=schema?.placeholder
-          v-model="props.value"
-          @input="$emit('update:model-value', $event.target.value)"
+        v-else
+        v-model="props.value"
+        :name="schema?.name"
+        :type="inputType"
+        :placeholder="schema?.placeholder"
+        @input="$emit('update:model-value', $event.target.value)"
       />
     </div>
-    <ErrorMessage class="base-form-input__error" :name="schema?.name"/>
+    <ErrorMessage class="base-form-input__error" :name="schema?.name" />
   </div>
 </template>
 
@@ -59,5 +58,4 @@ const props = defineProps({
     gap: 10px;
   }
 }
-
 </style>

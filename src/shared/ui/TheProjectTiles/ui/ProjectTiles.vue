@@ -16,83 +16,85 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
 </script>
 
 <template>
-  <div class="project-wrap">
-    <div class="project-wrap__head">
-      <h3>{{ projectArr?.name }} - {{ projectArr?.temp }}</h3>
-    </div>
-
-    <div
-      v-for="projectItem of projectArr.projectList"
-      :key="numGenerate(5000)"
-      class="project projectBorderWrap"
-      :class="{ dark_time_revert: projectItem.darkTime }"
-    >
-      <div
-        class="project__slider"
-        :class="{ 'flex-center': projectItem.slider?.length === 1 }"
-      >
-        <div v-if="projectItem.darkTime" class="dark_time" />
-        <span v-else>
-          <Carousel
-            v-if="projectItem.slider !== undefined && projectItem.slider?.length > 1"
-            :show-arrows="false"
-            :slider-list="projectItem.slider"
-          />
-          <img
-            v-if="projectItem.slider !== undefined && projectItem.slider?.length === 1"
-            :src="projectItem.slider[0]"
-            alt=""
-            class="one-img"
-          >
-        </span>
+  <div class="projectList">
+    <div class="project-wrap">
+      <div class="project-wrap__head">
+        <h3>{{ projectArr?.name }} - {{ projectArr?.temp }}</h3>
       </div>
+
       <div
-        class="project__description"
-        :class="{ dark_time: projectItem.darkTime }"
+        v-for="projectItem of projectArr.projectList"
+        :key="numGenerate(5000)"
+        class="project projectBorderWrap"
+        :class="{ dark_time_revert: projectItem.darkTime }"
       >
-        <h2>{{ projectItem.project }}</h2>
-        <h4>{{ projectItem.project_description }}</h4>
-        <hr>
-        <section>
-          <div><strong class="subHead">Стек:</strong></div>
-          <div class="stag">
-            <span v-for="item of projectItem.stack">
-              {{ item }}
-            </span>
-          </div>
-          <hr>
-        </section>
-        <section
-          v-if="projectItem.work !== undefined && projectItem.work.length !== 0"
-        >
-          <div><strong class="subHead">Что было сделано:</strong></div>
-          <ol>
-            <li
-              v-for="item of projectItem.work"
-            >
-              {{ item }}
-            </li>
-          </ol>
-          <hr>
-        </section>
-        <section
-          v-if="projectItem.workflow"
-        >
-          <Details
-            :header="subHead"
-          >
-            {{ projectItem.workflow }}
-          </Details>
-          <hr>
-        </section>
         <div
-          v-if="projectItem.link"
-          class="btn-wrap"
+          class="project__slider"
+          :class="{ 'flex-center': projectItem.slider?.length === 1 }"
         >
+          <div v-if="projectItem.darkTime" class="dark_time" />
+          <span v-else>
+            <Carousel
+              v-if="projectItem.slider !== undefined && projectItem.slider?.length > 1"
+              :show-arrows="false"
+              :slider-list="projectItem.slider"
+            />
+            <img
+              v-if="projectItem.slider !== undefined && projectItem.slider?.length === 1"
+              :src="projectItem.slider[0]"
+              alt=""
+              class="one-img"
+            >
+          </span>
+        </div>
+        <div
+          class="project__description"
+          :class="{ dark_time: projectItem.darkTime }"
+        >
+          <h2>{{ projectItem.project }}</h2>
+          <h4>{{ projectItem.project_description }}</h4>
           <hr>
-          <Button :href="projectItem.link">
-            Посетить сайт
-          </Button>
+          <section>
+            <div><strong class="subHead">Стек:</strong></div>
+            <div class="stag">
+              <span v-for="item of projectItem.stack">
+                {{ item }}
+              </span>
+            </div>
+            <hr>
+          </section>
+          <section
+            v-if="projectItem.work !== undefined && projectItem.work.length !== 0"
+          >
+            <div><strong class="subHead">Что было сделано:</strong></div>
+            <ol>
+              <li
+                v-for="item of projectItem.work"
+              >
+                {{ item }}
+              </li>
+            </ol>
+            <hr>
+          </section>
+          <section
+            v-if="projectItem.workflow"
+          >
+            <Details
+              :header="subHead"
+            >
+              {{ projectItem.workflow }}
+            </Details>
+            <hr>
+          </section>
+          <div
+            v-if="projectItem.link"
+            class="btn-wrap"
+          >
+            <hr>
+            <Button :href="projectItem.link">
+              Посетить сайт
+            </Button>
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +102,19 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
 </template>
 
 <style scoped lang="scss">
+.projectList {
+  & > div {
+    &:nth-child(odd) {
+      & > div {
+        flex-direction: row-reverse;
+
+        .btn-wrap {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
 .flex-center {
   display: flex;
   align-items: center;

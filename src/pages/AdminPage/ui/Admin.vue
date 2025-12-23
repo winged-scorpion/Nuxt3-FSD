@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { BaseH1 } from '~/shared/ui/BaseH1'
+import { BaseH1 } from '~/widgets/BaseH1'
 </script>
 
 <template>
   <BaseH1 />
 </template>
-
-<style scoped>
-
-</style>

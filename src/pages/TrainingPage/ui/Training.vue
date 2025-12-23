@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
-import { BaseH1 } from '~/shared/ui/BaseH1'
+import { BaseH1 } from '../../../widgets/BaseH1'
 import { Tabs } from '~/shared/ui/BaseTabs'
 import { Function } from '~/shared/ui/training/BaseFunction'
 import { Api } from '~/shared/ui/training/BaseApi'

@@ -23,3 +23,24 @@ const props = defineProps({
     </v-card-text>
   </v-card>
 </template>
+
+<style lang="scss">
+.card-title {
+  display: block;
+  flex: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  letter-spacing: 0.0125em;
+  min-width: 0;
+  padding: 0.5rem 1rem;
+  text-transform: none;
+}
+
+pre {
+  font-size: 14px;
+  color: black;
+  font-weight: 900;
+}
+</style>

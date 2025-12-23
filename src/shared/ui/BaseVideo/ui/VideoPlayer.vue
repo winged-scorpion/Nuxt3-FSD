@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-html="link"/>
+  <div v-html="link" />
   <div class="description">
     {{ name }}
   </div>
