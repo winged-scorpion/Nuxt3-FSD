@@ -8,7 +8,3 @@ export interface ModalContentVideo {
   link: string
   img: string
 }
-export interface ModalTest {
-  taskCode: string[]
-  taskHead: string
-}

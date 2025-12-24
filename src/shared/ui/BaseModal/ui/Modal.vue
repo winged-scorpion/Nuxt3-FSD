@@ -31,6 +31,7 @@ watch(() => modalStore.setLiveCode, () => {
 
 function closed() {
   modalStore.setVideo = null
+  modalStore.setLiveCode = null
 }
 </script>
 
