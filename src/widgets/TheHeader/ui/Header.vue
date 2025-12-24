@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NavigationComponent } from '../../../shared/ui/TheNavigation'
+import { NavigationComponent } from '~/shared/ui/TheNavigation'
 </script>
 
 <template>

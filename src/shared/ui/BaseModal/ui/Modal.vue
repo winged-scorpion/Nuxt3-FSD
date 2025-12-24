@@ -1,21 +1,29 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
-import type { ModalLiveCodeContent, ModalContentVideo } from '../model/ModalContent'
 import { Carousel } from '~/shared/ui/BaseCarousel'
 import { VideoPlayer } from '~/shared/ui/BaseVideo'
-import { useModal } from "~/shared/scope/useModal";
+import { useModal } from '~/shared/scope/useModal'
 
 const modalStore = useModal()
 const typeContent = ref('')
 const visible = ref(false)
-const video = reactive(<ModalContentVideo>{})
 
 watch(() => modalStore.setVideo, () => {
-  if(modalStore.setVideo){
+  if (modalStore.setVideo) {
     visible.value = true
     typeContent.value = 'video'
-    Object.assign(video,modalStore.outVideoModal)
-  }else{
+  }
+  else {
+    visible.value = false
+    typeContent.value = ''
+  }
+}, { deep: true })
+
+watch(() => modalStore.setLiveCode, () => {
+  if (modalStore.setLiveCode) {
+    visible.value = true
+    typeContent.value = 'livecode'
+  }
+  else {
     visible.value = false
     typeContent.value = ''
   }
@@ -39,14 +47,14 @@ function closed() {
         <Carousel
           :show-arrows="false"
           height="auto"
-          :task-list="task"
+          :task-list="modalStore.outLiveCode"
           :update="visible"
         />
       </div>
       <div v-if="typeContent === 'video'">
         <VideoPlayer
-          :link="video.link"
-          :name="video.description"
+          :link="modalStore.outVideoModal?.link"
+          :name="modalStore.outVideoModal?.description"
         />
       </div>
       <v-btn

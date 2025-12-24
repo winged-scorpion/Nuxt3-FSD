@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { IMG_LIST } from '../api/imgConstant'
-import type { BaseCarouselInt } from '../model/BaseCarouselInt'
 import { TileModalContent } from '~/shared/ui/TheTileModalContent'
+import type { ModalLiveCodeContent } from '~/shared/ui/BaseModal/model/ModalContent'
 
 const props = defineProps({
   sliderList: {
@@ -10,7 +10,7 @@ const props = defineProps({
     required: false,
   },
   taskList: {
-    type: Object as PropType<BaseCarouselInt>,
+    type: Object as PropType<ModalLiveCodeContent>,
     required: false,
   },
   sliderImg: {
@@ -30,6 +30,8 @@ function validateBackground(str: string) {
   })
   return link
 }
+
+console.log('--------------------------', props.taskList)
 </script>
 
 <template>
@@ -40,7 +42,8 @@ function validateBackground(str: string) {
     :class="{ __noPagination: props.sliderList.length === 1 }"
   >
     <v-carousel-item
-      v-for="item of props.sliderList"
+      v-for="(item, index) of props.sliderList"
+      :key="index"
       :src="validateBackground(item)"
       class="projectSlider"
     />

@@ -1,36 +1,32 @@
 <script setup lang="ts">
-import { BaseH1 } from '../../../widgets/BaseH1'
+import { BaseH1 } from '~/widgets/BaseH1'
 </script>
 
 <template>
-  <div class="pageContainer">
-    <BaseH1 />
-    <div>
-      <div class="wiki">
-        <div class="wiki__item">
-          сделать заглавные буквы строчными -> <span class="wiki__fun">.toLowerCase()</span><span
-            class="wiki__title"
-          >&#10071;</span>
-        </div>
-        <div class="wiki__item">
-          Убрать пробелы -> <span class="wiki__fun">.replaceAll(' ', '')</span><span
-            class="wiki__title"
-          >&#10071;</span>
-        </div>
-        <div class="wiki__item">
-          Убрать все символы кроме букв и чисел -> <span class="wiki__fun">.replace(/[^\w\s]|_/g, "")</span><span
-            class="wiki__title"
-          >&#10071;</span>
-        </div>
-        <div class="wiki__item">
-          преобразовать строку в массив -> <span class="wiki__fun">.split('')</span><span
-            class="wiki__title"
-          >&#10071;</span>
-        </div>
-        <div class="wiki__item">
-          Развернуть массив -> <span class="wiki__fun">.reverse()</span><span class="wiki__title">&#10071;</span>
-        </div>
-      </div>
+  <BaseH1 />
+  <div class="wiki">
+    <div class="wiki__item">
+      сделать заглавные буквы строчными -> <span class="wiki__fun">.toLowerCase()</span><span
+        class="wiki__title"
+    >&#10071;</span>
+    </div>
+    <div class="wiki__item">
+      Убрать пробелы -> <span class="wiki__fun">.replaceAll(' ', '')</span><span
+        class="wiki__title"
+    >&#10071;</span>
+    </div>
+    <div class="wiki__item">
+      Убрать все символы кроме букв и чисел -> <span class="wiki__fun">.replace(/[^\w\s]|_/g, "")</span><span
+        class="wiki__title"
+    >&#10071;</span>
+    </div>
+    <div class="wiki__item">
+      преобразовать строку в массив -> <span class="wiki__fun">.split('')</span><span
+        class="wiki__title"
+    >&#10071;</span>
+    </div>
+    <div class="wiki__item">
+      Развернуть массив -> <span class="wiki__fun">.reverse()</span><span class="wiki__title">&#10071;</span>
     </div>
   </div>
 </template>

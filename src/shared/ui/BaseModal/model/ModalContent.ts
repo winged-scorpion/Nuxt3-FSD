@@ -8,7 +8,7 @@ export interface ModalContentVideo {
   link: string
   img: string
 }
-export interface ModalInit {
-  liveCode: null | ModalLiveCodeContent
-  video: null | ModalContentVideo
+export interface ModalTest {
+  taskCode: string[]
+  taskHead: string
 }

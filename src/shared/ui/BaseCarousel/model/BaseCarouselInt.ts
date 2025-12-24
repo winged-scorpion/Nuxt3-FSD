@@ -1,5 +1,4 @@
 export interface BaseCarouselInt {
-  taskCode?: string[]
+  taskCode: string[]
   taskHead: string
-  video?: string
 }

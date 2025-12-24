@@ -1,29 +1,30 @@
 import { defineStore } from 'pinia'
-import type { ModalContentVideo, ModalInit } from '~/shared/ui/BaseModal/model/ModalContent'
+import type { ModalContentVideo, ModalLiveCodeContent } from '~/shared/ui/BaseModal/model/ModalContent'
 
 export interface ModalState {
-  setModal: null | ModalInit
   setVideo: null | ModalContentVideo
-  setBaseModal: null | ModalInit
+  setLiveCode: null | ModalLiveCodeContent
 }
 
 export const useModal = defineStore('modal', {
   state: (): ModalState => ({
-    setModal: null,
     setVideo: null,
-    setBaseModal: null,
+    setLiveCode: null,
   }),
   getters: {
     outVideoModal: (state) => {
       return state.setVideo
     },
-    outBaseModal: (state) => {
-      return state.setBaseModal
+    outLiveCode: (state) => {
+      return state.setLiveCode
     },
   },
   actions: {
     initVideoModal(item: ModalContentVideo) {
       this.setVideo = item
+    },
+    initLiveCodeModal(item: ModalLiveCodeContent) {
+      this.setLiveCode = item
     },
   },
 })
