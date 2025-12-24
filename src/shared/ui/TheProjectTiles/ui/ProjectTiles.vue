@@ -211,7 +211,7 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
           &:after {
             display: block;
             content: '';
-            background: url("~/app/assets/images/saimon/not_work.webp") no-repeat;
+            background: url("~/shared/assets/images/saimon/not_work.webp") no-repeat;
             width: 200px;
             height: 200px;
             background-size: contain;
@@ -249,7 +249,7 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
       }
 
       &:before {
-        background: url("~/app/assets/images/saimon/saimon_sadness.png") no-repeat;
+        background: url("~/shared/assets/images/saimon/saimon_sadness.png") no-repeat;
         background-size: contain;
         width: 200px;
         height: 95px;
@@ -258,7 +258,7 @@ const numGenerate = (max: number) => Math.floor(Math.random() * max)
       }
 
       &:after {
-        background: url("~/app/assets/images/saimon/png-klev-club-p-pautina-png-5.png") no-repeat;
+        background: url("~/shared/assets/images/saimon/png-klev-club-p-pautina-png-5.png") no-repeat;
         background-size: contain;
         width: 250px;
         height: 234px;

@@ -5,16 +5,16 @@ export async function getJsonFunction(name: string) {
   let tempArr = null
   switch (name) {
     case 'liveCode':
-      tempArr = await import('~/app/assets/json/liveTask.json')
+      tempArr = await import('../../assets/json/liveTask.json')
       break
     case 'interview':
-      tempArr = await import('~/app/assets/json/questions.json')
+      tempArr = await import('../../assets/json/questions.json')
       break
     case 'kitchen':
-      tempArr = await import('~/app/assets/json/video.json')
+      tempArr = await import('../../assets/json/video.json')
       break
     case 'project':
-      tempArr = await import('~/app/assets/json/project.json')
+      tempArr = await import('../../assets/json/project.json')
   }
   return Object.assign(returnJson, tempArr).default
 }

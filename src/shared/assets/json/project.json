@@ -22,9 +22,9 @@
           "Добавил логику редактирования товаров в режиме продавца из любой страницы сайта"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/stroy/1.png",
-          "/_nuxt/app/assets/images/slider/stroy/2.png",
-          "/_nuxt/app/assets/images/slider/stroy/3.png"
+          "/_nuxt/shared/assets/images/slider/stroy/1.png",
+          "/_nuxt/shared/assets/images/slider/stroy/2.png",
+          "/_nuxt/shared/assets/images/slider/stroy/3.png"
         ],
         "workflow": "Работа проходила в команде из 3 фронтов и 4 бек разработчиков, задачи раздовал Проектный менеджер код ревью проводит тех лид разработка велась всеми участниками паралельно"
       },
@@ -47,7 +47,7 @@
           "Устранил ошибки на пред Деплое"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/nevatom/1.jpg"
+          "/_nuxt/shared/assets/images/slider/nevatom/1.jpg"
         ],
         "workflow": "Работа проходила в команде но в отличие от  других компаний здесь было по 1 фронту на проекте и несколько беков. Задачи шли по мере выработки и если дневной объём выполнялся раньше то добавлялись новые задачи"
       },
@@ -70,7 +70,7 @@
           "Написание логики личного кабинета"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/loom/1.jpg"
+          "/_nuxt/shared/assets/images/slider/loom/1.jpg"
         ],
         "workflow": "Работа проходила в команде но в отличие от  других компаний здесь было по 1 фронту на проекте и несколько беков. Задачи шли по мере выработки и если дневной объём выполнялся раньше то добавлялись новые задачи"
       }
@@ -101,7 +101,7 @@
           "Дополнил документацию по проекту"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/rudn/1.jpg"
+          "/_nuxt/shared/assets/images/slider/rudn/1.jpg"
         ],
         "workflow": ""
       },
@@ -125,10 +125,10 @@
           "Добавил защиту форм от ботов"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/caspian/1.png",
-          "/_nuxt/app/assets/images/slider/caspian/2.png",
-          "/_nuxt/app/assets/images/slider/caspian/3.png",
-          "/_nuxt/app/assets/images/slider/caspian/4.png"
+          "/_nuxt/shared/assets/images/slider/caspian/1.png",
+          "/_nuxt/shared/assets/images/slider/caspian/2.png",
+          "/_nuxt/shared/assets/images/slider/caspian/3.png",
+          "/_nuxt/shared/assets/images/slider/caspian/4.png"
         ],
         "workflow": ""
       },
@@ -151,9 +151,9 @@
           ""
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/mumu/1.jpg",
-          "/_nuxt/app/assets/images/slider/mumu/2.jpg",
-          "/_nuxt/app/assets/images/slider/mumu/3.jpg"
+          "/_nuxt/shared/assets/images/slider/mumu/1.jpg",
+          "/_nuxt/shared/assets/images/slider/mumu/2.jpg",
+          "/_nuxt/shared/assets/images/slider/mumu/3.jpg"
         ],
         "workflow": ""
       }
@@ -182,7 +182,7 @@
           "Сделал частичный редизайн корзины"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/novardis/1.jpg"
+          "/_nuxt/shared/assets/images/slider/novardis/1.jpg"
         ],
         "workflow": ""
       },
@@ -200,7 +200,7 @@
         "link": "https://www.winelab.ru/",
         "work": [],
         "slider": [
-          "/_nuxt/app/assets/images/slider/novardis/winelab.jpg"
+          "/_nuxt/shared/assets/images/slider/novardis/winelab.jpg"
         ]
       }
     ]
@@ -218,9 +218,9 @@
         "link": "",
         "work": [],
         "slider": [
-          "/_nuxt/app/assets/images/slider/freelance_app/1.jpg",
-          "/_nuxt/app/assets/images/slider/freelance_app/2.jpg",
-          "/_nuxt/app/assets/images/slider/freelance_app/3.jpg"
+          "/_nuxt/shared/assets/images/slider/freelance_app/1.jpg",
+          "/_nuxt/shared/assets/images/slider/freelance_app/2.jpg",
+          "/_nuxt/shared/assets/images/slider/freelance_app/3.jpg"
         ],
         "workflow": ""
       }
@@ -245,9 +245,9 @@
           "Добавил возможность экспорта полученного документа в pdf."
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/biplan/1.jpg",
-          "/_nuxt/app/assets/images/slider/biplan/2.jpg",
-          "/_nuxt/app/assets/images/slider/biplan/3.jpg"
+          "/_nuxt/shared/assets/images/slider/biplan/1.jpg",
+          "/_nuxt/shared/assets/images/slider/biplan/2.jpg",
+          "/_nuxt/shared/assets/images/slider/biplan/3.jpg"
         ],
         "workflow": ""
       }
@@ -266,7 +266,7 @@
         "link": "https://www.oknarosta.ru/",
         "work": [],
         "slider": [
-          "/_nuxt/app/assets/images/slider/okna_rosta/1.jpg"
+          "/_nuxt/shared/assets/images/slider/okna_rosta/1.jpg"
         ],
         "workflow": ""
       }
@@ -285,7 +285,7 @@
         "link": "https://apteka.ru/",
         "work": [],
         "slider": [
-          "/_nuxt/app/assets/images/slider/picom/2.jpg"
+          "/_nuxt/shared/assets/images/slider/picom/2.jpg"
         ],
         "workflow": ""
       },
@@ -299,7 +299,7 @@
           "Сделан редизайн сайта"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/picom/1.jpg"
+          "/_nuxt/shared/assets/images/slider/picom/1.jpg"
         ]
       }
     ]
@@ -329,9 +329,9 @@
           "Сделал шаблон рубрики франшизы"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/binet/1.jpeg",
-          "/_nuxt/app/assets/images/slider/binet/2.jpg",
-          "/_nuxt/app/assets/images/slider/binet/3.jpg"
+          "/_nuxt/shared/assets/images/slider/binet/1.jpeg",
+          "/_nuxt/shared/assets/images/slider/binet/2.jpg",
+          "/_nuxt/shared/assets/images/slider/binet/3.jpg"
         ],
         "workflow": ""
       }
@@ -375,8 +375,8 @@
         "link": "",
         "work": [],
         "slider": [
-          "/_nuxt/app/assets/images/slider/pulter/1.jpg",
-          "/_nuxt/app/assets/images/slider/pulter/2.png"
+          "/_nuxt/shared/assets/images/slider/pulter/1.jpg",
+          "/_nuxt/shared/assets/images/slider/pulter/2.png"
         ],
         "workflow": ""
       }
@@ -395,8 +395,8 @@
         "link": "https://www.vezetvsem.ru/",
         "work": [],
         "slider": [
-          "/_nuxt/app/assets/images/slider/vezetvsem/1.jpg",
-          "/_nuxt/app/assets/images/slider/vezetvsem/2.jpg"
+          "/_nuxt/shared/assets/images/slider/vezetvsem/1.jpg",
+          "/_nuxt/shared/assets/images/slider/vezetvsem/2.jpg"
         ],
         "workflow": ""
       }
@@ -421,10 +421,10 @@
           "Замены шрифтов, оптимизация картинок"
         ],
         "slider": [
-          "/_nuxt/app/assets/images/slider/freelance_1/1.jpg",
-          "/_nuxt/app/assets/images/slider/freelance_1/2.jpg",
-          "/_nuxt/app/assets/images/slider/freelance_1/3.jpg",
-          "/_nuxt/app/assets/images/slider/freelance_1/4.jpg"
+          "/_nuxt/shared/assets/images/slider/freelance_1/1.jpg",
+          "/_nuxt/shared/assets/images/slider/freelance_1/2.jpg",
+          "/_nuxt/shared/assets/images/slider/freelance_1/3.jpg",
+          "/_nuxt/shared/assets/images/slider/freelance_1/4.jpg"
         ],
         "workflow": "Рабочее общение с клиентами проходило в основном в ISQ.\nКлиенты либо новые которых  находил на FL либо уже постоянные присылали мне макеты на оценку в формате psd.\nЗатем проходило согласование стоимости проекта, дедлайн, основные требования к вёрстке.\nДалее приступал к работе и по готовности показывал заказчику готовую страницу или несколько страниц в зависимости от проекта размещённые на моём сайте.\nДалее если требовалось вносил правки и отправлял архив с вёрсткой на почту клиента. "
       }
