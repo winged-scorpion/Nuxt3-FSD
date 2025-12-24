@@ -3,7 +3,7 @@ import MasonryWall from '@yeger/vue-masonry-wall'
 import { randomBackground } from '~/shared/ui/TheLiveCodeTile/api/randomBackground'
 import { LiveCodeTile } from '~/shared/ui/TheLiveCodeTile'
 import { getJsonFunction } from '~/shared/api/base/getJson'
-import { useModal } from '~/shared/scope/useModal'
+import { useModal } from '~/shared/store/useModal'
 
 const taskList = await getJsonFunction('liveCode')
 const modalStore = useModal()

@@ -8,7 +8,7 @@ const props = defineProps({
 })
 // @/assets/audio
 const audioSrc = computed(() => {
-  const path = new URL('~/app/assets/audio', import.meta.url)
+  const path = new URL('~/shared/assets/audio', import.meta.url)
   return `${path}${props.audioLink}`
 })
 </script>

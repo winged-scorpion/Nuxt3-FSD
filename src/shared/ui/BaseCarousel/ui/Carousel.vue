@@ -2,7 +2,7 @@
 import type { PropType } from 'vue'
 import { IMG_LIST } from '../api/imgConstant'
 import { TileModalContent } from '~/shared/ui/TheTileModalContent'
-import type { ModalLiveCodeContent } from '~/shared/ui/BaseModal/model/ModalContent'
+import type { ModalLiveCodeContent } from '~/widgets/BaseModal/model/ModalContent'
 
 const props = defineProps({
   sliderList: {

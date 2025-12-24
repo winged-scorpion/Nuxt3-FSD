@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { ModalContentVideo, ModalLiveCodeContent } from '~/shared/ui/BaseModal/model/ModalContent'
+import type { ModalContentVideo, ModalLiveCodeContent } from '~/widgets/BaseModal/model/ModalContent'
 
 export interface ModalState {
   setVideo: null | ModalContentVideo

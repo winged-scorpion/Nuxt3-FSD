@@ -2,7 +2,7 @@
 import { HeaderComponent } from '../../../widgets/TheHeader'
 import { FooterComponent } from '~/widgets/TheFooter'
 import { Preloader } from '~/shared/ui/ThePreloader'
-import { Modal } from '~/shared/ui/BaseModal'
+import { Modal } from '../../../widgets/BaseModal'
 
 const pageLoader = ref(true)
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Carousel } from '~/shared/ui/BaseCarousel'
 import { VideoPlayer } from '~/shared/ui/BaseVideo'
-import { useModal } from '~/shared/scope/useModal'
+import { useModal } from '~/shared/store/useModal'
 
 const modalStore = useModal()
 const typeContent = ref('')

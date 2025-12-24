@@ -1,42 +1,44 @@
 <script setup lang="ts">
-import { getJsonFunction } from "~/shared/api/base/getJson"
-import type { ProjectCompanyList } from "~/shared/model/projectListSlider"
-import {useProjectList} from "~/shared/scope/useProjectList";
+import type { ProjectCompanyList } from '~/shared/model/projectListSlider'
+import { useProjectList } from '~/shared/store/useProjectList'
 
-const projectList = await getJsonFunction('project');
-let projectListArr = reactive(<ProjectCompanyList[]>projectList)
 const projectListStore = useProjectList()
-projectListStore.getProjectList()
-const tickLabels = Object.assign({}, projectListArr.map((el) => el.temp))
-const thumbLabels = projectListArr.map((el) => el.name)
+await projectListStore.getProjectList()
+
+const projectList: ProjectCompanyList[] = projectListStore.setProjectList
+const projectListArr = reactive(projectList)
+const tickLabels = Object.assign({}, projectListArr.map(el => el.temp))
+const thumbLabels = projectListArr.map(el => el.name)
 const rangeReactive = reactive([0, thumbLabels.length - 1])
 
 function updateRangeSlider(item: [number, number]) {
   Object.assign(rangeReactive, item)
   projectListStore.getProjectList(item)
 }
-
 </script>
 
 <template>
   <div class="range-labels">
     <div
-        class="range-labels__wrap"
-        v-for="label in thumbLabels"
+      v-for="label in thumbLabels"
+      :key="label"
+      class="range-labels__wrap"
     >
-      <div class="range-labels__item">{{ label }}</div>
+      <div class="range-labels__item">
+        {{ label }}
+      </div>
     </div>
   </div>
 
   <v-range-slider
-      class="range"
-      :max="thumbLabels.length - 1"
-      :ticks="tickLabels"
-      show-ticks="always"
-      :step="1"
-      min="0"
-      @update:modelValue="updateRangeSlider"
-      v-model="rangeReactive"
+    v-model="rangeReactive"
+    class="range"
+    :max="thumbLabels.length - 1"
+    :ticks="tickLabels"
+    show-ticks="always"
+    :step="1"
+    min="0"
+    @update:model-value="updateRangeSlider"
   />
 </template>
 

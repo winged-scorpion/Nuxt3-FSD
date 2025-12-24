@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useVideoList } from '~/shared/scope/useVideoList'
+import { useVideoList } from '~/shared/store/useVideoList'
 import type { VideoList } from '~/pages/ItKitchenPage/model'
-import { useModal } from "~/shared/scope/useModal"
+import { useModal } from "~/shared/store/useModal"
 
 const videoListState = useVideoList()
 const modalState = useModal()
