@@ -26,6 +26,7 @@ export const useProjectList = defineStore('projectList', {
             this.setProjectList = value
           }
         }
+        return value
       })
     },
   },

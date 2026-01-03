@@ -22,5 +22,11 @@
     "description": "Feature-Sliced Design - Лучшая Frontend архитектура",
     "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/O4SDx-aZY5U?si=MI16XcmkGCHoob50\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
     "img": "https://img.youtube.com/vi/O4SDx-aZY5U/0.jpg"
+  },
+  {
+    "id": 4,
+    "description": "Собеседование Frontend Javascript Vue | 150 тысяч",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/roxIFHGaVvo?si=hREa5ZA9cOJARsLB\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/roxIFHGaVvo/0.jpg"
   }
 ]

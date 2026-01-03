@@ -7,7 +7,7 @@ import type {Question, QuestionFull} from "../model/index"
 import { Button } from "~/shared/ui/BaseButton";
 import {defineAsyncComponent, ref} from "vue";
 
-const baseQuestionList = await getJsonFunction('interview'),
+const baseQuestionList:QuestionFull[] = await getJsonFunction('interview'),
     sortQuestionList = reactive(<QuestionFull[]>[]),
     setListQuestions = reactive(<Question[]>[]),
     itemQuestionArr = reactive(<Question>{}),
@@ -72,6 +72,7 @@ function itemQuestion(reset: boolean = false ) {
   progressBarModel.value = ++progressBarModel.value;
   if (progressBarModel.value >= 100) {
     progressBarModel.value = 0
+    nextQuestion()
   }
   if(reset){
     progressBarModel.value = 0
@@ -117,6 +118,8 @@ function stop(){
             <span>
               Интервал между вопросами в минутах
             </span>
+            <input type="text">
+
             <Input
                 v-model="interviewData.timeInterview"
                 :schema="schema.interval"
@@ -180,9 +183,7 @@ function stop(){
             <details class="slide__body">
               <summary class="slide__accordion">{{itemQuestionArr.question}}</summary>
               <br>
-              <div class="slide__down">
-                {{itemQuestionArr.answer}}
-              </div>
+              <div class="slide__down" v-html="itemQuestionArr.answer"></div>
             </details>
           </div>
         </div>
@@ -212,6 +213,13 @@ function stop(){
           >
             Сброс
           </Button>
+          <Button
+              class="button"
+              disabled
+          >
+            Блиц опрос
+          </Button>
+
         </div>
       </div>
     </div>

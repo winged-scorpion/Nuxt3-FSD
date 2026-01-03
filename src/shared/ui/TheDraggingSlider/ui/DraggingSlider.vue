@@ -6,6 +6,7 @@ const projectListStore = useProjectList()
 await projectListStore.getProjectList()
 
 const projectList: ProjectCompanyList[] = projectListStore.setProjectList
+let test = projectListStore.getProjectList()
 const projectListArr = reactive(projectList)
 const tickLabels = Object.assign({}, projectListArr.map(el => el.temp))
 const thumbLabels = projectListArr.map(el => el.name)
