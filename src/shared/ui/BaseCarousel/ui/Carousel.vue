@@ -30,8 +30,6 @@ function validateBackground(str: string) {
   })
   return link
 }
-
-console.log('--------------------------', props.taskList)
 </script>
 
 <template>

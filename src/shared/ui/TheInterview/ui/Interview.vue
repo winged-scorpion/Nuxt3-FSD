@@ -118,8 +118,6 @@ function stop(){
             <span>
               Интервал между вопросами в минутах
             </span>
-            <input type="text">
-
             <Input
                 v-model="interviewData.timeInterview"
                 :schema="schema.interval"
@@ -219,7 +217,6 @@ function stop(){
           >
             Блиц опрос
           </Button>
-
         </div>
       </div>
     </div>

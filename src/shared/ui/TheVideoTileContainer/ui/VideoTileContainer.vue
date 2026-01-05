@@ -15,7 +15,6 @@ function setVideoId(item: VideoList) {
 </script>
 
 <template>
-
   <div class="player player-wrap">
     <div
       v-for="(item, index) in itKitchen"

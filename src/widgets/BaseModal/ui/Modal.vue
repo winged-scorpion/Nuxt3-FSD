@@ -95,7 +95,7 @@ function closed() {
     position: absolute;
     right: 0;
     top: 0;
-
+    border-radius: 0 0 0 100%;
   }
 }
 .liveCode-modal{
@@ -110,6 +110,5 @@ function closed() {
   background: red;
   width: 500px;
   height: 500px;
-
 }
 </style>
