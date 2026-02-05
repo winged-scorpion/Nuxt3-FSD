@@ -8,7 +8,7 @@ defineProps(['error'])
       <h1>{{ error.statusCode }}</h1>
       <h2>Упс что то пошло не так</h2>
       <h3>Мы работаем над проблемой</h3>
-      <img src="src/shared/assets/images/error.jpg" alt="error">
+      <img  src="./shared/assets/images/error.jpg" alt="error">
       <div>
         <v-btn href="/">
           Вернутся на главную

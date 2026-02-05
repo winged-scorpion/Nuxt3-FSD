@@ -29,8 +29,8 @@ function setVideoId(item: VideoList) {
           mdi-play-box
         </v-icon>
         <img
-          :src="item.img"
-          :alt="item.description"
+            :src="item.img"
+            :alt="item.description"
         >
       </div>
       <div class="player__description">

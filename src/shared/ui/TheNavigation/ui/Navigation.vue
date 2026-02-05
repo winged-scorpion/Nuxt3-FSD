@@ -39,6 +39,12 @@ const navigationLink = [
     h1: 'Моя Wiki по js',
     visibility: true,
   },
+  {
+    page: '/admin',
+    name: 'Админка',
+    h1: 'Админка',
+    visibility: true,
+  },
 ]
 </script>
 

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
 import type { SchemaItem } from '../model/SchemaItem'
 import type { InputHidden } from '../model/InputList'
 

@@ -5,9 +5,10 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
     '@pinia/nuxt',
+    'nuxt-directus',
+    'nuxt-security',
   ],
-  css: ['@/app/global.css', '@unocss/reset/tailwind.css', 'vuetify/lib/styles/main.sass'],
-
+  css: ['@/app/global.css', 'vuetify/lib/styles/main.sass'],
   srcDir: 'src',
 
   future: {
@@ -24,6 +25,7 @@ export default defineNuxtConfig({
   dir: {
     pages: 'app/routes',
     layouts: 'shared/ui/layouts',
+    middleware: 'app/middleware',
   },
   build: {
     transpile: ['vuetify'],

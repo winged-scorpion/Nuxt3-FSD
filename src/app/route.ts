@@ -35,4 +35,10 @@ export const NAVIGATION_LINK = [
     h1: 'Моя Wiki по js',
     visibility: true,
   },
+  {
+    page: '/admin',
+    name: 'Admin',
+    h1: 'Админка',
+    visibility: true,
+  },
 ]
