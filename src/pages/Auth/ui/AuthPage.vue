@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { AuthPage } from '~/pages/Auth'
+import { Auth } from '~/shared/ui/TheAuth'
 </script>
 
 <template>
-  <AuthPage/>
+  <Auth />
 </template>
 
 <style scoped lang="scss">

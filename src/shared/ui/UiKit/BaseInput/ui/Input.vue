@@ -30,14 +30,14 @@ const props = defineProps({
   >
     <label v-if="schema?.label">{{ schema.label }}</label>
     <div class="base-form-input__wrap">
-      <Field
+      <v-text-field
         v-if="inputType === 'number'"
         v-model.number="props.value"
         :name="schema?.name"
         :type="inputType"
         @input="$emit('update:model-value', $event.target.value)"
       />
-      <Field
+      <v-text-field
         v-else
         v-model="props.value"
         :name="schema?.name"

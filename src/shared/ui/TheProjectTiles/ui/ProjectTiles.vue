@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Carousel } from '~/shared/ui/BaseCarousel'
-import { Button } from '~/shared/ui/BaseButton/'
+import { Button } from '~/shared/ui/UiKit/BaseButton'
 import { Details } from '~/shared/ui/BaseDetails'
 import { useProjectList } from '~/shared/store/useProjectList'
 

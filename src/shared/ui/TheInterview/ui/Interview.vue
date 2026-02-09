@@ -1,14 +1,14 @@
 <script setup lang="ts">
 
 import {BASE_COLOR, INPUT_TYPE} from "../api/constant"
-import { Input } from "~/shared/ui/BaseInput";
+import { Input } from "~/shared/ui/UiKit/BaseInput";
 import type {Question, QuestionFull} from "../model/index"
-import { Button } from "~/shared/ui/BaseButton";
+import { Button } from "~/shared/ui/UiKit/BaseButton";
 import {computed, defineAsyncComponent, ref} from "vue";
 import { useInterview } from '~/shared/ui/TheInterview/store/useInterview'
 
 const interview = useInterview()
-await interview.getLiveCode()
+await interview.getInterview()
 
 
 const baseQuestionList = computed(():QuestionFull[] | null => {

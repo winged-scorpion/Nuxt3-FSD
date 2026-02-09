@@ -3,7 +3,6 @@ import { AdminPage } from '~/pages/AdminPage'
 import { definePageMeta } from '#imports'
 
 onMounted(() => {
-  console.log('start')
   definePageMeta({
     middleware: 'user',
   })

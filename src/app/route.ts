@@ -41,4 +41,10 @@ export const NAVIGATION_LINK = [
     h1: 'Админка',
     visibility: true,
   },
+  {
+    page: '/auth',
+    name: 'auth',
+    h1: 'Авторизация',
+    visibility: true,
+  },
 ]

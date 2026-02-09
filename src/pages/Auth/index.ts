@@ -1,3 +1,3 @@
-import Auth from './ui/Auth.vue'
+import AuthPage from './ui/AuthPage.vue'
 
-export { Auth }
+export { AuthPage }

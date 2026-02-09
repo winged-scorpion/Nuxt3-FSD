@@ -16,7 +16,7 @@ export const useInterview = defineStore('interview', {
     },
   },
   actions: {
-    async getLiveCode() {
+    async getInterview() {
       if (this.setInterview)
         return false
       const { data, error, status } = await useApiFetch('/api/question', {
