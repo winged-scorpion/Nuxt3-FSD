@@ -5,6 +5,7 @@ import { Details } from '~/shared/ui/BaseDetails'
 import { useProjectList } from '~/shared/store/useProjectList'
 
 const projectListStore = useProjectList()
+await projectListStore.getProject()
 projectListStore.filterProjectList()
 
 const projectListArrBase = computed(() => projectListStore.outProduct)

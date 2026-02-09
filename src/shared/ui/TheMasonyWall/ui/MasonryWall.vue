@@ -1,19 +1,33 @@
 <script setup lang="ts">
 import MasonryWall from '@yeger/vue-masonry-wall'
+import { computed } from 'vue'
 import { randomBackground } from '~/shared/ui/TheLiveCodeTile/api/randomBackground'
 import { LiveCodeTile } from '~/shared/ui/TheLiveCodeTile'
-import { getJsonFunction } from '~/shared/api/base/getJson'
 import { useModal } from '~/shared/store/useModal'
+import { useLiveCode } from '~/shared/ui/TheMasonyWall/store/useLiveCode'
 
-const taskList = await getJsonFunction('liveCode')
+const liveCode = useLiveCode()
 const modalStore = useModal()
+
+await liveCode.getLiveCode()
+
 function openDialog(code: [string, string[]]) {
   modalStore.initLiveCodeModal({ taskCode: code[1], taskHead: code[0] })
 }
+const taskList:[[string, string[]]] = computed(() => {
+  if (liveCode.outLiveCode)
+    return liveCode.outLiveCode
+})
 </script>
 
 <template>
-  <MasonryWall :items="taskList" :ssr-columns="1" :column-width="300" :gap="16">
+  <MasonryWall
+    v-if="taskList"
+    :items="taskList"
+    :ssr-columns="1"
+    :column-width="300"
+    :gap="16"
+  >
     <template #default="{ item, index }">
       <LiveCodeTile
         :key="index"
