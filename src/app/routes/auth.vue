@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1>аВТОРИЗАЦИЯ</h1>
+  <h1>Авторизация</h1>
 </template>
 
 <style scoped lang="scss">

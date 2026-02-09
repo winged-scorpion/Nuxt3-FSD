@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { Auth } from '~/pages/Auth'
+import { BaseH1 } from '~/widgets/BaseH1'
 </script>
 
 <template>
-  <Auth/>
+  <div class="pageContainer">
+    <BaseH1 />
+    <form>
+      <input type="text">
+      <input type="text">
+    </form>
+  </div>
 </template>
 
 <style scoped lang="scss">

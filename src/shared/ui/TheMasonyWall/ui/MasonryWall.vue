@@ -14,9 +14,8 @@ await liveCode.getLiveCode()
 function openDialog(code: [string, string[]]) {
   modalStore.initLiveCodeModal({ taskCode: code[1], taskHead: code[0] })
 }
-const taskList:[[string, string[]]] = computed(() => {
-  if (liveCode.outLiveCode)
-    return liveCode.outLiveCode
+const taskList = computed((): [[string, string[]]] | null => {
+  return liveCode.outLiveCode ? liveCode.outLiveCode : null
 })
 </script>
 

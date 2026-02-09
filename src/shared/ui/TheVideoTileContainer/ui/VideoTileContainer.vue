@@ -1,17 +1,21 @@
 <script setup lang="ts">
-import { useVideoList } from '~/shared/store/useVideoList'
+import { computed } from 'vue'
 import type { VideoList } from '~/pages/ItKitchenPage/model'
-import { useModal } from "~/shared/store/useModal"
+import { useModal } from '~/shared/store/useModal'
+import { useVideo } from '~/shared/ui/TheVideoTileContainer/store/useVideo'
 
-const videoListState = useVideoList()
+const video = useVideo()
+await video.getVideo()
+
+const itKitchen = computed((): VideoList[] | null => {
+  return video.outVideo ? video.outVideo : null
+})
+
 const modalState = useModal()
-await videoListState.getVideoList()
-const itKitchen = reactive(<VideoList[]>videoListState.setVideoList)
 
 function setVideoId(item: VideoList) {
   modalState.initVideoModal(item)
 }
-
 </script>
 
 <template>
@@ -29,8 +33,8 @@ function setVideoId(item: VideoList) {
           mdi-play-box
         </v-icon>
         <img
-            :src="item.img"
-            :alt="item.description"
+          :src="item.img"
+          :alt="item.description"
         >
       </div>
       <div class="player__description">

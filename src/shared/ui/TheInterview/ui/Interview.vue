@@ -2,12 +2,19 @@
 
 import {BASE_COLOR, INPUT_TYPE} from "../api/constant"
 import { Input } from "~/shared/ui/BaseInput";
-import {getJsonFunction} from "~/shared/api/base/getJson";
 import type {Question, QuestionFull} from "../model/index"
 import { Button } from "~/shared/ui/BaseButton";
-import {defineAsyncComponent, ref} from "vue";
+import {computed, defineAsyncComponent, ref} from "vue";
+import { useInterview } from '~/shared/ui/TheInterview/store/useInterview'
 
-const baseQuestionList:QuestionFull[] = await getJsonFunction('interview'),
+const interview = useInterview()
+await interview.getLiveCode()
+
+
+const baseQuestionList = computed(():QuestionFull[] | null => {
+  return interview.outInterview ? interview.outInterview : null
+})
+const
     sortQuestionList = reactive(<QuestionFull[]>[]),
     setListQuestions = reactive(<Question[]>[]),
     itemQuestionArr = reactive(<Question>{}),
@@ -39,8 +46,8 @@ function shuffleQuestion() {
 }
 
 function sortTopicsTag(tag: string, checked: boolean) {
-  if (checked) {
-    let itemTopic = baseQuestionList.find((item) => {
+  if (checked && baseQuestionList.value) {
+    let itemTopic = baseQuestionList.value.find((item) => {
       if (item.tag === tag) {
         return item
       }

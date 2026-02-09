@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { useApiFetch } from '~/shared/api/useApiFetch'
 
 export interface liveCodeState {
-  setLiveCode: null | [string, string[]]
+  setLiveCode: [[string, string[]]] | null
 }
 
 export const useLiveCode = defineStore('liveCode', {

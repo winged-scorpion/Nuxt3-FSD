@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "description": "РЕАЛЬНОЕ FRONTEND VUE СОБЕСЕДОВАНИЕ НА ЗП 280К (REACT МЕРТВ)! MIDDLE/SENIOR ФРОНТЕНД СОБЕСЕДОВАНИЕ!",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/YYOVU2GkV3Q?si=RFayeahQX8N7cypa\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/YYOVU2GkV3Q/0.jpg"
+  },
+  {
+    "id": 2,
+    "description": "Собеседование Middle Frontend: JS + React + TS + GraphQL + RTK",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/9V0APJvQtL4?si=Xal1ps4KS9aXwGKA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/9V0APJvQtL4/0.jpg"
+  },
+  {
+    "id": 3,
+    "description": "ТОП 10 ВОПРСОВ В ЯНДЕКС, ТИНЬКОФ, ОЗОН ПО VUE",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/BHeW5j7ap9g?si=q_ou9g0L31g-sGFB\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/BHeW5j7ap9g/0.jpg"
+  },
+  {
+    "id": 3,
+    "description": "Feature-Sliced Design - Лучшая Frontend архитектура",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/O4SDx-aZY5U?si=MI16XcmkGCHoob50\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/O4SDx-aZY5U/0.jpg"
+  },
+  {
+    "id": 4,
+    "description": "Собеседование Frontend Javascript Vue | 150 тысяч",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/roxIFHGaVvo?si=hREa5ZA9cOJARsLB\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/roxIFHGaVvo/0.jpg"
+  },
+  {
+    "id": 5,
+    "description": "Собеседование на FRONTEND Разработчика уровня Senior (Middle +)",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/TOw2ME7Bvvw?si=DPIHjzEodBKeP6kM\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/TOw2ME7Bvvw/0.jpg"
+  },
+  {
+    "id": 6,
+    "description": "10 Вопросов TypeScript (И как на них отвечать)",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Vs79rj53kv4?si=zz6vZfFvUgF2QGu9\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/Vs79rj53kv4/0.jpg"
+  },
+  {
+    "id": 7,
+    "description": "С Java на JavaScript в 35. Собеседование на Frontend Junior разработчика",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ScRTey_dvhI?si=qnEzNsE_DqcNhGTX\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/ScRTey_dvhI/0.jpg"
+  },
+  {
+    "id": 6,
+    "description": "ПОЛИГРАФ ЧТОБЫ ПОЛУЧИТЬ ОФФЕР... РЕАЛЬНОЕ FRONTEND СОБЕСЕДОВАНИЕ НА ЗП ДО 390К (MIDDLE/SENIOR)",
+    "link": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/GXI6FmljMPE?si=XXf13U2bb3ygTeBH\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "img": "https://img.youtube.com/vi/GXI6FmljMPE/0.jpg"
+  }
+]
