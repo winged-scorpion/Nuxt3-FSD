@@ -3,7 +3,7 @@ import type { ProjectCompanyList } from '~/shared/model/projectListSlider'
 import { useProjectList } from '~/shared/store/useProjectList'
 
 const projectListStore = useProjectList()
-await projectListStore.getProjectList()
+await projectListStore.getProject()
 
 const projectList: ProjectCompanyList[] = projectListStore.setProjectList
 const projectListArr = reactive(projectList)
@@ -13,7 +13,7 @@ const rangeReactive = reactive([0, thumbLabels.length - 1])
 
 function updateRangeSlider(item: [number, number]) {
   Object.assign(rangeReactive, item)
-  projectListStore.getProjectList(item)
+  projectListStore.filterProjectList(item)
 }
 </script>
 

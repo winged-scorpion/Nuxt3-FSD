@@ -5,7 +5,7 @@ import { Details } from '~/shared/ui/BaseDetails'
 import { useProjectList } from '~/shared/store/useProjectList'
 
 const projectListStore = useProjectList()
-projectListStore.getProjectList()
+projectListStore.filterProjectList()
 
 const projectListArrBase = computed(() => projectListStore.outProduct)
 const subHead = 'Как проходила работа:'
