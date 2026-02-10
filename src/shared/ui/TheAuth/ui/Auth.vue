@@ -4,13 +4,22 @@ import { Button } from '~/shared/ui/UiKit/BaseButton'
 import { useAuth } from '~/shared/ui/TheAuth/store/useAuth'
 
 const auth = useAuth()
-const form = reactive({
+const formReg = reactive({
   login: '',
   password: '',
+  email: '',
+})
+const formAuth = reactive({
+  login: '',
+  password: '',
+  email: '',
 })
 
-async function submit() {
-  let test = await auth.postData(form)
+function regSubmit() {
+  auth.userRegistration(formReg)
+}
+function authSubmit() {
+  auth.userAuth(formAuth)
 }
 </script>
 
@@ -18,28 +27,62 @@ async function submit() {
   <BaseH1
     class="text-center"
   />
-  <v-form
-    class="form"
-    lazy-validation
-  >
-    <v-text-field
-      v-model="form.login"
-      name="login"
-      required
-    />
-    <v-text-field
-      v-model="form.password"
-      name="password"
-      required
-    />
-    <Button
-      :disabled="!form"
-      class="width100"
-      @click="submit"
+  <div class="flex">
+    <v-form
+      class="form"
+      lazy-validation
     >
-      Авторизация
-    </Button>
-  </v-form>
+      <v-text-field
+        v-model="formReg.login"
+        name="login"
+        required
+        placeholder="Login"
+      />
+      <v-text-field
+        v-model="formReg.email"
+        name="email"
+        required
+        placeholder="Email"
+      />
+      <v-text-field
+        v-model="formReg.password"
+        name="password"
+        required
+        placeholder="Password"
+      />
+      <Button
+        :disabled="!formReg"
+        class="width100"
+        @click="regSubmit"
+      >
+        Регистрация
+      </Button>
+    </v-form>
+    <v-form
+      class="form"
+      lazy-validation
+    >
+      <v-text-field
+        v-model="formAuth.email"
+        name="email"
+        required
+        placeholder="Email"
+      />
+      <v-text-field
+        v-model="formAuth.password"
+        name="password"
+        required
+        placeholder="Password"
+      />
+      <Button
+        :disabled="!formAuth"
+        class="width100"
+        @click="authSubmit"
+      >
+        Регистрация
+      </Button>
+    </v-form>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -49,5 +92,10 @@ async function submit() {
 }
 .width100{
   width: 100%;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
 }
 </style>

@@ -7,6 +7,7 @@ export interface authState {
 interface userData {
   login: string
   password: string
+  email: string
 }
 
 export const useAuth = defineStore('auth', {
@@ -19,20 +20,35 @@ export const useAuth = defineStore('auth', {
     },
   },
   actions: {
-    async postData(auth: userData) {
-      const { data, error, status } = await useApiFetch('/api/auth', {
+    async userRegistration(reg: userData) {
+      const { data, error, status } = await useApiFetch('/api/userreg', {
         cache: 'no-cache',
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: auth,
+        body: reg,
       })
-      if (status === 200 && data.auth) {
+      if (status === 200) {
         this.setAuth = data.auth
         return data.auth
       }
       return false
+    },
+
+    async userAuth(auth: userData) {
+      const { data, error, status } = await useApiFetch(`/api/user?login=${auth.email}&password=${auth.password}`, {
+        cache: 'no-cache',
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      // if (status === 200) {
+      //   this.setInterview = data.questions
+      //   return true
+      // }
+      console.log('userData-----------',data)
     },
   },
 })
