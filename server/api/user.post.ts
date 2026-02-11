@@ -22,7 +22,8 @@ export default defineEventHandler(async (event) => {
       .run()
     return {
       success: true,
-      message: 'User created successfully',
+      message: 'Пользователь зарегестрирован',
+      user: body,
       lastInsertRowid: result.lastInsertRowid,
     }
   }

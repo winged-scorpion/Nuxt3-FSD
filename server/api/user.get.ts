@@ -9,11 +9,14 @@ export default defineEventHandler(async (event) => {
     const result = usersList.filter(user =>
       user.login === query.login && user.password === query.password,
     )
-    if (result) {
-      return result
+    if (result.length !== 0) {
+      return {
+        user: result[0],
+      }
     }
     else {
       return {
+        user: null,
         message: 'Пользователь не найден',
       }
     }

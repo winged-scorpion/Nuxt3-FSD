@@ -41,8 +41,8 @@ const navigationLink = [
   },
   {
     page: '/admin',
-    name: 'Админка',
-    h1: 'Админка',
+    name: 'Авторизация',
+    h1: 'Авторизация',
     visibility: true,
   },
 ]
