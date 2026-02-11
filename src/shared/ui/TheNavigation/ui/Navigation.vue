@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useUserStore } from '../api/AuthorizationStore'
-
-const userStore = useUserStore()
 const navigationLink = [
   {
     page: '/',
