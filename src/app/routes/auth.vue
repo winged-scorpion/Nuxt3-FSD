@@ -3,7 +3,7 @@ import { AuthPage } from '~/pages/Auth'
 </script>
 
 <template>
-  <AuthPage/>
+  <AuthPage />
 </template>
 
 <style scoped lang="scss">

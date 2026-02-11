@@ -1,5 +1,4 @@
 export function localStoreSet(name: string, set: any) {
-  console.log('name, JSON.stringify(set)',name, JSON.stringify(set))
   localStorage.setItem(name, JSON.stringify(set))
 }
 

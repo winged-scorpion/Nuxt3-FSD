@@ -48,7 +48,7 @@ export const useAuth = defineStore('auth', {
       if (status === 200) {
         this.setAuth = data.success
         localStoreSet('user', data.user)
-        return data.success
+        return navigateTo('/admin')
       }
       return false
     },

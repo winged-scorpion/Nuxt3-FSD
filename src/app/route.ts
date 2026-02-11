@@ -38,7 +38,7 @@ export const NAVIGATION_LINK = [
   {
     page: '/admin',
     name: 'Admin',
-    h1: 'Авторизация',
+    h1: 'Профиль',
     visibility: true,
   },
   {
