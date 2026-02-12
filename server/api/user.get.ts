@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   try {
     const usersList = db.select().from(users).all()
-    if(query.user === 'all'){
+    if (query.user === 'all') {
       return usersList
     }
     const result = usersList.filter(user =>

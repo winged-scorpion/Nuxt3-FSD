@@ -25,8 +25,21 @@ export const useUsers = defineStore('users', {
         },
       })
       if (data) {
-        console.log('data-----------------', data)
         this.setUserData = data
+      }
+    },
+    async deleteUser(user: userData) {
+      const { data, error, status } = await useApiFetch(`/api/user/${user.id}`, {
+        cache: 'no-cache',
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      if (data) {
+        if (data.success) {
+          await this.getAllUserData()
+        }
       }
     },
   },

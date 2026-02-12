@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { useUsers } from '~/shared/ui/TheAdmin/store/users'
 import { Button } from '~/shared/ui/UiKit/BaseButton'
+import type { userData } from '~/shared/ui/TheAuth/model/user'
 
 const allUser = useUsers()
+
+function delUser(user: userData) {
+  allUser.deleteUser(user)
+}
 </script>
 
 <template>
@@ -10,8 +15,10 @@ const allUser = useUsers()
     <h3>
       Зареганные юзеры
       <Button
-          @click="allUser.getAllUserData"
-      >Загрузить</Button>
+        @click="allUser.getAllUserData"
+      >
+        Загрузить
+      </Button>
     </h3>
 
     <ul>
@@ -24,8 +31,9 @@ const allUser = useUsers()
         <span><span>Login:</span>{{ item.login }}</span>
         <span><span>Email:</span>{{ item.email }}</span>
         <span><span>Password:</span>{{ item.password }}</span>
-        <Button>Удалить</Button>
-
+        <Button @click="delUser(item)">
+          Удалить
+        </Button>
       </li>
     </ul>
   </div>
