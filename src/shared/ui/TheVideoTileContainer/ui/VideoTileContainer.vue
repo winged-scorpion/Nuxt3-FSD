@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { VideoList } from '~/pages/ItKitchenPage/model'
-import { useModal } from '~/shared/store/useModal'
+
 import { useVideo } from '~/shared/ui/TheVideoTileContainer/store/useVideo'
+import emitter from '~/shared/api/eventBus'
+import { ItKitchen } from '~/shared/ui/Ui/Modal'
 
 const video = useVideo()
 await video.getVideo()
@@ -11,10 +13,8 @@ const itKitchen = computed((): VideoList[] | null => {
   return video.outVideo ? video.outVideo : null
 })
 
-const modalState = useModal()
-
 function setVideoId(item: VideoList) {
-  modalState.initVideoModal(item)
+  emitter.emit('openModal', { components: ItKitchen, props: { link: item.link, name: item.description } })
 }
 </script>
 

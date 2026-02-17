@@ -27,6 +27,8 @@
     "@yeger/vue-masonry-wall": "^5.0.15",
     "better-sqlite3": "^12.6.2",
     "drizzle-orm": "^0.45.1",
+    "eventbusjs": "^0.2.0",
+    "mitt": "^3.0.1",
     "mongoose": "^9.2.0",
     "nuxt-directus": "^5.7.0",
     "nuxt-security": "^2.5.1",

@@ -3,16 +3,16 @@ import MasonryWall from '@yeger/vue-masonry-wall'
 import { computed } from 'vue'
 import { randomBackground } from '~/shared/ui/TheLiveCodeTile/api/randomBackground'
 import { LiveCodeTile } from '~/shared/ui/TheLiveCodeTile'
-import { useModal } from '~/shared/store/useModal'
 import { useLiveCode } from '~/shared/ui/TheMasonyWall/store/useLiveCode'
+import emitter from '~/shared/api/eventBus'
+import { LiveCode } from '~/shared/ui/Ui/Modal'
 
 const liveCode = useLiveCode()
-const modalStore = useModal()
 
 await liveCode.getLiveCode()
 
 function openDialog(code: [string, string[]]) {
-  modalStore.initLiveCodeModal({ taskCode: code[1], taskHead: code[0] })
+  emitter.emit('openModal', { components: LiveCode, props: { taskCode: code[1], taskHead: code[0] } })
 }
 const taskList = computed((): [[string, string[]]] | null => {
   return liveCode.outLiveCode ? liveCode.outLiveCode : null

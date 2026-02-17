@@ -42,5 +42,19 @@ export const useUsers = defineStore('users', {
         }
       }
     },
+    async updateUser(user: userData) {
+      console.log('user',user)
+      const { data, error, status } = await useApiFetch(`/api/user/${user.id}`, {
+        cache: 'no-cache',
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: user,
+      })
+      if (data) {
+        this.setUserData = data
+      }
+    },
   },
 })

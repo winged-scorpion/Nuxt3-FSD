@@ -5,6 +5,8 @@ import { users } from '../schema/schema'
 // Путь к вашей базе данных
 const sqlite = path.resolve(process.cwd(), './server/db/database.sqlite')
 
+export const sqlitePath = path.resolve(process.cwd(), './server/db/database.sqlite')
+
 // Инициализация Drizzle ORM
 export const db = drizzle(sqlite)
 

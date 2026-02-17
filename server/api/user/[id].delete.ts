@@ -28,7 +28,8 @@ export default defineEventHandler(async (event) => {
   catch (err) {
     console.error('Ошибка при удалении из БД:', err)
     return {
-      error: `Ошибка сервера при удалении пользователя 111`,id,
+      error: `Ошибка сервера при удалении пользователя 111`,
+      id,
     }
   }
 })
