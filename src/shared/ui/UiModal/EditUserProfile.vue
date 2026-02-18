@@ -1,11 +1,23 @@
 <script setup lang="ts">
+import { useUsers } from '~/shared/ui/TheAdmin/store/users'
+
+const props = defineProps({
+  user: {
+    type: Number,
+    required: true,
+  },
+})
+
+const user = useUsers()
+
 const userUpdate = reactive({
+  id: props.user,
   login: '',
   email: '',
   password: '',
 })
 function submit() {
-  console.log('userUpdate------------', userUpdate)
+  user.updateUser(userUpdate)
 }
 </script>
 

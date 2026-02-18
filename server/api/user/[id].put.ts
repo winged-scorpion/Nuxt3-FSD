@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const data = (await readBody(event)) as NewUser
   if (!id)
     return { statusCode: 400, message: 'User id not specified' }
-  const { login, email } = data
+  const { login, email, password } = data
   if (!login || !email) {
     return { statusCode: 400, message: 'Name and email are required' }
   }
@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     if (!user) {
       return { statusCode: 404, message: 'User not found' }
     }
-    await db.run(`UPDATE user SET login = '${login}', email = '${email}' WHERE id = ${Number(id)}`)
+    await db.run(`UPDATE user SET login = '${login}', password = '${password}', email = '${email}' WHERE id = ${Number(id)}`)
     return {
       statusCode: 200,
       message: 'User updated successfully',

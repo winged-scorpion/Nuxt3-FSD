@@ -23,8 +23,12 @@ export default defineEventHandler(async (event) => {
     return {
       success: true,
       message: 'Пользователь зарегестрирован',
-      user: body,
-      lastInsertRowid: result.lastInsertRowid,
+      user: {
+        id: result.lastInsertRowid,
+        login: body.login,
+        email: body.email,
+        password: body.password,
+      },
     }
   }
   catch (error) {

@@ -5,7 +5,7 @@ import { randomBackground } from '~/shared/ui/TheLiveCodeTile/api/randomBackgrou
 import { LiveCodeTile } from '~/shared/ui/TheLiveCodeTile'
 import { useLiveCode } from '~/shared/ui/TheMasonyWall/store/useLiveCode'
 import emitter from '~/shared/api/eventBus'
-import { LiveCode } from '~/shared/ui/Ui/Modal'
+import { LiveCode } from '~/shared/ui/UiModal'
 
 const liveCode = useLiveCode()
 

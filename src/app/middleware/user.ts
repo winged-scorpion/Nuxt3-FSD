@@ -11,12 +11,15 @@ export default defineNuxtRouteMiddleware(async (_to, _from) => {
     return
   const localUserData: userData = await localStoreGet('user')
   if (localUserData.login) {
+    console.log('11111')
     isAuthenticated = true
   }
   if (!isAuthenticated && _to.path !== '/auth') {
+    console.log('22222')
     return navigateTo('/auth')
   }
   if (isAuthenticated && _to.path !== '/admin') {
+    console.log('33333')
     return navigateTo('/admin')
   }
 })

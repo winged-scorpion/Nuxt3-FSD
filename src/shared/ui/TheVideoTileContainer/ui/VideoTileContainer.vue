@@ -4,7 +4,7 @@ import type { VideoList } from '~/pages/ItKitchenPage/model'
 
 import { useVideo } from '~/shared/ui/TheVideoTileContainer/store/useVideo'
 import emitter from '~/shared/api/eventBus'
-import { ItKitchen } from '~/shared/ui/Ui/Modal'
+import { ItKitchen } from '~/shared/ui/UiModal'
 
 const video = useVideo()
 await video.getVideo()

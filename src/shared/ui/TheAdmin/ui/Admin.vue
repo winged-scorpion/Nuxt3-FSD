@@ -3,26 +3,32 @@ import { useUsers } from '~/shared/ui/TheAdmin/store/users'
 import { Button } from '~/shared/ui/UiKit/BaseButton'
 import type { userData } from '~/shared/ui/TheAuth/model/user'
 import emitter from '~/shared/api/eventBus'
-import { EditUserProfile } from '~/shared/ui/Ui/Modal'
+import { EditUserProfile } from '~/shared/ui/UiModal'
+import { localStoreDelete, localStoreGet } from '~/shared/api/storageFunction'
 
 const allUser = useUsers()
-
+const localUserId = ref()
 function delUser(user: userData) {
   allUser.deleteUser(user)
 }
-function editUser(user: userData) {
-  // allUser.updateUser({
-  //   email: "11adddsd1",
-  //   id: 42,
-  //   login: "11ddddd1",
-  //   password: "dddd111",
-  // })
-  emitter.emit('openModal', { components: EditUserProfile, props: null })
+function editUser(userId: number) {
+  emitter.emit('openModal', { components: EditUserProfile, props: { user: userId } })
 }
+function logout() {
+  allUser.setUserData = null
+  localStoreDelete('user')
+  navigateTo('/auth')
+}
+onMounted(async () => {
+  const user: userData = await localStoreGet('user')
+  localUserId.value = user.id
+})
 </script>
 
 <template>
-  <button>Разлогинится</button>
+  <Button @click="logout">
+    Разлогинится
+  </Button>
   <div class="admin-tab">
     <div>
       <h3>
@@ -37,18 +43,30 @@ function editUser(user: userData) {
         <li
           v-for="(item, index) in allUser.outUsersData"
           :key="index"
-          class="user"
         >
-          <span><span>Id:</span>{{ item.id }}</span>
-          <span><span>Login:</span>{{ item.login }}</span>
-          <span><span>Email:</span>{{ item.email }}</span>
-          <span><span>Password:</span>{{ item.password }}</span>
-          <Button @click="delUser(item)">
-            Удалить
-          </Button>
-          <Button @click="editUser(item)">
-            Обновить
-          </Button>
+          <div
+            class="user"
+            :class="{ user__admin: localUserId === item.id }"
+          >
+            <div
+              v-if="localUserId === item.id"
+              class="user__label"
+            >
+              Admin
+            </div>
+            <div class="user__body">
+              <span><span>Id:</span>{{ item.id }}</span>
+              <span><span>Login:</span>{{ item.login }}</span>
+              <span><span>Email:</span>{{ item.email }}</span>
+              <span><span>Password:</span>{{ item.password }}</span>
+              <Button @click="delUser(item)">
+                Удалить
+              </Button>
+              <Button @click="editUser(item.id)">
+                Обновить
+              </Button>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -97,21 +115,31 @@ function editUser(user: userData) {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  > span{
-    color: green;
-    margin-right: 5px;
-    &:nth-child(1){width: 60px}
-    &:nth-child(2){width: 200px}
-    &:nth-child(3){width: 200px}
-    &:nth-child(4){width: 200px}
+  flex-wrap: wrap;
+  &__label{
+    width: 100%;
+  }
+  &__admin{
+    background: rgb(95 158 160 / 17%);
+  }
+  &__body{
     > span{
-      color: red;
-      font-weight: bold;
-      margin: 0 5px;
-      &:first-of-type{
-        margin-left: 0;
+      color: green;
+      margin-right: 5px;
+      &:nth-child(1){width: 60px}
+      &:nth-child(2){width: 200px}
+      &:nth-child(3){width: 200px}
+      &:nth-child(4){width: 200px}
+      > span{
+        color: red;
+        font-weight: bold;
+        margin: 0 5px;
+        &:first-of-type{
+          margin-left: 0;
+        }
       }
     }
   }
+
 }
 </style>

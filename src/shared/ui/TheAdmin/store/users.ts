@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { useApiFetch } from '~/shared/api/useApiFetch'
 import type { userData } from '~/shared/ui/TheAuth/model/user'
+import { localStoreSet } from '~/shared/api/storageFunction'
 
 export interface UsersState {
   setUserData: null | userData[]
@@ -43,7 +44,6 @@ export const useUsers = defineStore('users', {
       }
     },
     async updateUser(user: userData) {
-      console.log('user',user)
       const { data, error, status } = await useApiFetch(`/api/user/${user.id}`, {
         cache: 'no-cache',
         method: 'PUT',
@@ -53,7 +53,13 @@ export const useUsers = defineStore('users', {
         body: user,
       })
       if (data) {
-        this.setUserData = data
+        if (this.setUserData === null)
+          return false
+        const index: number | undefined = this.setUserData?.findIndex(item => item.id === user.id)
+        if (index !== -1) {
+          this.setUserData[index] = { ...this.setUserData[index], ...data.user }
+          localStoreSet('user', this.setUserData[index])
+        }
       }
     },
   },
