@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { useApiFetch } from '~/shared/api/useApiFetch'
-import type { userData } from '~/shared/ui/TheAuth/model/user'
+import type { userData } from '~/features/AuthUser/model/user'
 import { localStoreSet } from '~/shared/api/storageFunction'
 
 export interface UsersState {

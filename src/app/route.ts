@@ -2,7 +2,7 @@ export const NAVIGATION_LINK = [
   {
     page: '/',
     name: 'Главная',
-    h1: 'Учебный проект test',
+    h1: 'Учебный проект',
     visibility: true,
   },
   {
@@ -21,7 +21,7 @@ export const NAVIGATION_LINK = [
     page: '/training',
     name: 'Базовые задачи',
     h1: 'Базовые задачи по разному функционалу',
-    visibility: true,
+    visibility: false,
   },
   {
     page: '/itKitchen',
@@ -33,17 +33,11 @@ export const NAVIGATION_LINK = [
     page: '/wiki',
     name: 'Wiki',
     h1: 'Моя Wiki по js',
-    visibility: true,
+    visibility: false,
   },
   {
     page: '/admin',
-    name: 'Admin',
-    h1: 'Профиль',
-    visibility: true,
-  },
-  {
-    page: '/auth',
-    name: 'auth',
+    name: 'Авторизация',
     h1: 'Авторизация',
     visibility: true,
   },

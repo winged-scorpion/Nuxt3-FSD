@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUsers } from '~/shared/ui/TheAdmin/store/users'
+import { useUsers } from '~/features/Admin/store/users'
 
 const props = defineProps({
   user: {

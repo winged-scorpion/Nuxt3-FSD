@@ -1,6 +1,6 @@
 import { defineNuxtRouteMiddleware } from 'nuxt/app'
-import { useAuth } from '~/shared/ui/TheAuth/store/useAuth'
-import type { userData } from '~/shared/ui/TheAuth/model/user'
+import { useAuth } from '~/features/AuthUser/store/useAuth'
+import type { userData } from '~/features/AuthUser/model/user'
 import { localStoreGet } from '~/shared/api/storageFunction'
 
 export default defineNuxtRouteMiddleware(async (_to, _from) => {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useUsers } from '~/shared/ui/TheAdmin/store/users'
+import { useUsers } from '~/features/Admin/store/users'
 import { Button } from '~/shared/ui/UiKit/BaseButton'
-import type { userData } from '~/shared/ui/TheAuth/model/user'
+import type { userData } from '~/features/AuthUser/model/user'
 import emitter from '~/shared/api/eventBus'
 import { EditUserProfile } from '~/shared/ui/UiModal'
 import { localStoreDelete, localStoreGet } from '~/shared/api/storageFunction'

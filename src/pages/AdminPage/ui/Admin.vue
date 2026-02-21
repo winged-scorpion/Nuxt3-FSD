@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseH1 } from '../../../shared/ui/BaseH1'
-import { Admin } from '~/shared/ui/TheAdmin'
+import { Admin } from '../../../features/Admin'
 </script>
 
 <template>

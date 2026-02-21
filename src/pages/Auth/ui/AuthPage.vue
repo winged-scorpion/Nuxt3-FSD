@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Auth } from '~/shared/ui/TheAuth'
+import { Auth } from '../../../features/AuthUser'
 </script>
 
 <template>
