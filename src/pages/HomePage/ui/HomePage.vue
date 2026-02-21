@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseH1 } from '~/widgets/BaseH1'
-import { DraggingSlider } from '~/shared/ui/TheDraggingSlider'
+import { BaseH1 } from '../../../shared/ui/BaseH1'
+import { DraggingSlider } from '../../../features/DraggingSliderProject'
 import { ProjectTiles } from '~/shared/ui/TheProjectTiles'
 </script>
 

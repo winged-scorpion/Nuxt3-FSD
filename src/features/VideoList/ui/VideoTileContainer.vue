@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import type { VideoList } from '~/pages/ItKitchenPage/model'
 
-import { useVideo } from '~/shared/ui/TheVideoTileContainer/store/useVideo'
+import { useVideo } from '~/features/VideoList/store/useVideo'
 import emitter from '~/shared/api/eventBus'
 import { ItKitchen } from '~/shared/ui/UiModal'
 

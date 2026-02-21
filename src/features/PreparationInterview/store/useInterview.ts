@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { useApiFetch } from '~/shared/api/useApiFetch'
-import type { QuestionFull } from '~/shared/ui/TheInterview/model'
+import type { QuestionFull } from '~/features/PreparationInterview/model'
 
 export interface interviewState {
   setInterview: QuestionFull[] | null

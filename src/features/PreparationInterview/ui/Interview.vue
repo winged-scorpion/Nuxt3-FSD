@@ -2,10 +2,10 @@
 
 import {BASE_COLOR, INPUT_TYPE} from "../api/constant"
 import { Input } from "~/shared/ui/UiKit/BaseInput";
-import type {Question, QuestionFull} from "../model/index"
+import type {Question, QuestionFull} from "../model"
 import { Button } from "~/shared/ui/UiKit/BaseButton";
 import {computed, defineAsyncComponent, ref} from "vue";
-import { useInterview } from '~/shared/ui/TheInterview/store/useInterview'
+import { useInterview } from '~/features/PreparationInterview/store/useInterview'
 
 const interview = useInterview()
 await interview.getInterview()
@@ -71,7 +71,7 @@ function callAudio(question: Question | undefined) {
   Object.assign(itemQuestionArr,question)
   audioLink.value = question.audio
   asyncModalWithOptions = defineAsyncComponent({
-    loader: () => import('~/shared/ui/BaseAudio/ui/Audio.vue'),
+    loader: () => import('../../../shared/ui/BaseAudio/ui/Audio.vue'),
   })
 }
 

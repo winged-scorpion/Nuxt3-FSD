@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseH1 } from '~/widgets/BaseH1'
-import { Interview } from '~/shared/ui/TheInterview'
+import { BaseH1 } from '../../../shared/ui/BaseH1'
+import { Interview } from '../../../features/PreparationInterview'
 </script>
 
 <template>

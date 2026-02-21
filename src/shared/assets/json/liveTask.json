@@ -121,5 +121,17 @@
   [
     "Квадрат 3х3",
     ["function checkSquare(square) {\n  return new Set(square.flat(Infinity)).size === square.flat(Infinity).length\n}\n\nconsole.log(\n    checkSquare([\n      [1, 2, 3],\n      [4, 4, 6],\n      [7, 8, 9]\n    ]) // true\n"]
+  ],
+  [
+    "Индекс массы тела (далее ИМТ) — это показатель оценки физического развития, который рассчитывается по формуле: \"вес(кг) / рост(м²)\".\n\nНапишите функцию calculateBMI(weight, height), которая принимает в качестве параметров вес тела weight (в килограммах), рост height (в сантиметрах), и определяет индекс массы тела, соответствующего этим параметрам.\n\nФункция должна возвращать следующие категории: \n- если ИМТ меньше 18.5 (не включительно) - \"недостаток веса\"\n- если ИМТ находится в диапазоне от 18.5 (включительно) до 25 (не включительно) - \"нормальный вес\"\n- если ИМТ находится в диапазоне от 25 (включительно) до 30 невключительно - \"избыточный вес\"\n- если ИМТ находится от 30 и выше - \"ожирение\"\n\nИМТ должен быть округлен до двух знаков после запятой.\n\nНапример, для девушки ростом 162 см и весом 60 кг это 60/(1,62 * 1,62), что приблизительно равняется 22,86.\n\nФункция должна возвращать массив. Сначала ИМТ, потом категорию.",
+    "function calculateBMI(weight, height) {\n        const im = +(weight / ((height / 100) * 2)).toFixed(2)\n        if (im < 18.5) {\n            return [im, \"недостаток веса\"]\n        } else if (18.5 < im && im < 25) {\n            return [im, \"нормальный вес\"]\n        } else if (25 < im && im < 30) {\n            return [im, \"избыточный вес\"]\n        } else {\n            return [im, \"ожирение\"]\n        }\n    }\n    console.log(calculateBMI(70, 170))\n    // [24.22, 'нормальный вес']\n    console.log(calculateBMI(30, 150))\n    // [13.33, 'недостаток веса']\n    console.log(calculateBMI(90, 180))\n    // [27.78, 'избыточный вес']\n    console.log(calculateBMI(100, 180))\n    // [30.86, 'ожирение']"
+  ],
+  [
+    "Панграмма - это предложение, содержащее все буквы английского алфавита.\n\nНапишите функцию isPangram(text), которая принимает в качестве параметра text строку и возвращает true, если она является панграммой, и в противном случае - false.",
+    ["function isPangram(text){\n        const arr = text.replaceAll(/[^a-zA-Z]/g,'').toLowerCase().split('')\n        const arrFin = new Set(arr)        \n        return arrFin.size === 26;\n    }\n    console.log(isPangram(\"The jay, pig, fox, zebra and my wolves quack!\"))"]
+  ],
+  [
+    "Арифметическая прогрессия - это последовательность чисел, одинаково возрастающая от числа к числу на одну и ту же величину.\n\nНапишите функцию isArithmeticProgression(arr), которая принимает в качестве параметра массив чисел arr и возвращает true, если последовательность чисел, которую образуют элементы массива, является арифметической прогрессией, и false в противном случае.",
+    ["function isArithmeticProgression(arr){\n        let test\n        let test2\n        let test3\n        for(let i = 0; arr.length >= i; i++){\n            if(isNaN(arr[i+1])) break\n            test = arr[i+1] - arr[i]\n            if(i === 0){\n                test2 = arr[i+1] - arr[i]\n            }\n            if(test !== test2){\n                test3 = false\n                break\n            }else{\n                test3 = true\n            }\n        }\n        return test3\n    }\n    console.log(isArithmeticProgression([3, 6, 9, 12, 15]))\n    console.log(isArithmeticProgression([1, 2, 4, 7, 11]))"]
   ]
 ]

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { HeaderComponent } from '~/widgets/TheHeader'
-import { FooterComponent } from '~/widgets/TheFooter'
+import { HeaderComponent } from '../../../widgets/Header'
+import { FooterComponent } from '../../../widgets/Footer'
 import { Preloader } from '~/shared/ui/ThePreloader'
 import { localStoreGet } from '~/shared/api/storageFunction'
 import { useAuth } from '~/shared/ui/TheAuth/store/useAuth'
 import type { userData } from '~/shared/ui/TheAuth/model/user'
-import { ModalT } from '~/widgets/BaseModalTel'
+import { ModalT } from '../../../widgets/Modal'
 
 const pageLoader = ref(true)
 const auth = useAuth()

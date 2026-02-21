@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { BaseH1 } from '~/widgets/BaseH1'
+import { BaseH1 } from '../../BaseH1'
 import { Button } from '~/shared/ui/UiKit/BaseButton'
 import { useAuth } from '~/shared/ui/TheAuth/store/useAuth'
 import { emailRules, loginRules, passwordRules } from '~/shared/api/validate'

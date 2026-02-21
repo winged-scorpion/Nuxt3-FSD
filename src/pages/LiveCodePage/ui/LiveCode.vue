@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseH1 } from '~/widgets/BaseH1'
-import { MasonryWall } from '~/shared/ui/TheMasonyWall'
+import { BaseH1 } from '../../../shared/ui/BaseH1'
+import { MasonryWall } from '../../../features/LiveCodeMasonryWall'
 </script>
 
 <template>

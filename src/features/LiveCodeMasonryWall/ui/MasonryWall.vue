@@ -2,8 +2,8 @@
 import MasonryWall from '@yeger/vue-masonry-wall'
 import { computed } from 'vue'
 import { randomBackground } from '~/shared/ui/TheLiveCodeTile/api/randomBackground'
-import { LiveCodeTile } from '~/shared/ui/TheLiveCodeTile'
-import { useLiveCode } from '~/shared/ui/TheMasonyWall/store/useLiveCode'
+import { LiveCodeTile } from '../../../shared/ui/TheLiveCodeTile'
+import { useLiveCode } from '~/features/LiveCodeMasonryWall/store/useLiveCode'
 import emitter from '~/shared/api/eventBus'
 import { LiveCode } from '~/shared/ui/UiModal'
 
