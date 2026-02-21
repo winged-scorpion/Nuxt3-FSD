@@ -1,0 +1,36 @@
+import { defineStore } from 'pinia'
+import { useApiFetch } from '~/shared/api/useApiFetch'
+import type { QuestionFull } from '~/features/PreparationInterview/model'
+
+export interface interviewState {
+  setInterview: QuestionFull[] | null
+}
+
+export const useQuestion = defineStore('question', {
+  state: (): interviewState => <interviewState>({
+    setInterview: null,
+  }),
+  getters: {
+    outInterview: (state) => {
+      return state.setInterview
+    },
+  },
+  actions: {
+    async getInterview() {
+      if (this.setInterview)
+        return false
+      const { data, error, status } = await useApiFetch('/api/question', {
+        cache: 'no-cache',
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      if (status === 200) {
+        this.setInterview = data.questions
+        return true
+      }
+      return false
+    },
+  },
+})
