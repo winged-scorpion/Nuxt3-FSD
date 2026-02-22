@@ -30,6 +30,7 @@ onMounted(async () => {
       <UploadIcon />
     </button>
   </div>
+  <hr class="mb-5">
   <ul>
     <li
       v-for="(item, index) in allUser.outUsersData"

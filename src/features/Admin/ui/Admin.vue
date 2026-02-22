@@ -4,6 +4,8 @@ import { Button } from '~/shared/ui/UiKit/BaseButton'
 import { localStoreDelete } from '~/shared/api/storageFunction'
 import { UploadIcon } from '~/shared/ui/Icon'
 import { Users } from '~/entities/Users'
+import {Interviews} from "../../../entities/Interviews";
+import VideoList from "~/entities/Video/ui/VideoList.vue";
 
 const allUser = useUsers()
 function logout() {
@@ -21,7 +23,7 @@ const tab = ref('one')
   </Button>
   <v-sheet
     elevation="4"
-    class=""
+    class="admin"
   >
     <v-tabs v-model="tab" color="red">
       <v-tab value="one">
@@ -43,29 +45,12 @@ const tab = ref('one')
       </v-tabs-window-item>
       <v-tabs-window-item value="two">
         <v-sheet class="pa-5">
-          <div class="tabs-head">
-            <strong>Вопрос-ответ</strong>
-            <button
-              class="svg-icon rotate180"
-            >
-              <UploadIcon />
-            </button>
-          </div>
-          <div>
-
-          </div>
+          <Interviews/>
         </v-sheet>
       </v-tabs-window-item>
       <v-tabs-window-item value="three">
         <v-sheet class="pa-5">
-          <div class="tabs-head">
-            <strong>IT-Кухня видео</strong>
-            <button
-              class="svg-icon rotate180"
-            >
-              <UploadIcon />
-            </button>
-          </div>
+          <VideoList/>
         </v-sheet>
       </v-tabs-window-item>
     </v-tabs-window>
@@ -73,20 +58,7 @@ const tab = ref('one')
 </template>
 
 <style scoped lang="scss">
-.admin-tab{
-  padding: 0 15px;
-  >div{
-    border-right: solid 1px black;
-    padding: 15px 15px 15px 0;
-    //width: 33%;
-    h3{
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    &:last-of-type{
-      border-right: none;
-      padding-right: 0;
-    }
-  }
+.admin{
+  margin-top: 15px;
 }
 </style>
