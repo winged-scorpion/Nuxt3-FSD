@@ -17,8 +17,6 @@ export const useInterviews = defineStore('interviews', {
   },
   actions: {
     async getInterview() {
-      if (this.setInterviews)
-        return false
       const { data, error, status } = await useApiFetch('/api/question', {
         cache: 'no-cache',
         method: 'get',
@@ -28,7 +26,6 @@ export const useInterviews = defineStore('interviews', {
       })
       if (status === 200) {
         this.setInterviews = data.questions
-
         return true
       }
       return false

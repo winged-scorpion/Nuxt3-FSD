@@ -11,8 +11,8 @@ const allUser = useUsers()
 function delUser(user: userData) {
   allUser.deleteUser(user)
 }
-function editUser(userId: number) {
-  emitter.emit('openModal', { components: EditUserProfile, props: { user: userId } })
+function editUser(userId: number, l: string, e: string, p: string) {
+  emitter.emit('openModal', { components: EditUserProfile, props: { user: userId, login: l, email: e, password: p } })
 }
 onMounted(async () => {
   const user: userData = await localStoreGet('user')
@@ -57,15 +57,15 @@ onMounted(async () => {
         <div class="user__button">
           <button
             class="svg-icon"
-            @click="delUser(item)"
+            @click="editUser(item.id, item.login, item.email, item.password)"
           >
-            <DeleteIcon />
+            <EditIcon />
           </button>
           <button
             class="svg-icon"
-            @click="editUser(item.id)"
+            @click="delUser(item)"
           >
-            <EditIcon />
+            <DeleteIcon />
           </button>
         </div>
       </div>

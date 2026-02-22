@@ -1,5 +1,6 @@
 import EditUserProfile from './ui/EditUserProfile.vue'
 import LiveCode from './ui/LiveCode.vue'
 import ItKitchen from './ui/ItKitchen.vue'
+import EditQuestion from './ui/EditQuestion.vue'
 
-export { EditUserProfile, LiveCode, ItKitchen }
+export { EditUserProfile, LiveCode, ItKitchen, EditQuestion }

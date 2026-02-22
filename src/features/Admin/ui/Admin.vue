@@ -1,11 +1,10 @@
 <script setup lang="ts">
+import { Interviews } from '~/entities/Interviews'
 import { useUsers } from '~/features/Admin/store/users'
 import { Button } from '~/shared/ui/UiKit/BaseButton'
 import { localStoreDelete } from '~/shared/api/storageFunction'
-import { UploadIcon } from '~/shared/ui/Icon'
 import { Users } from '~/entities/Users'
-import {Interviews} from "../../../entities/Interviews";
-import VideoList from "~/entities/Video/ui/VideoList.vue";
+import VideoList from '~/entities/Video/ui/VideoList.vue'
 
 const allUser = useUsers()
 function logout() {
@@ -30,7 +29,7 @@ const tab = ref('one')
         Юзеры
       </v-tab>
       <v-tab value="two">
-        Темы и вопросы лайвкодинга
+        Темы и вопросы собеседования
       </v-tab>
       <v-tab value="three">
         It кухня видео
@@ -45,12 +44,12 @@ const tab = ref('one')
       </v-tabs-window-item>
       <v-tabs-window-item value="two">
         <v-sheet class="pa-5">
-          <Interviews/>
+          <Interviews />
         </v-sheet>
       </v-tabs-window-item>
       <v-tabs-window-item value="three">
         <v-sheet class="pa-5">
-          <VideoList/>
+          <VideoList />
         </v-sheet>
       </v-tabs-window-item>
     </v-tabs-window>

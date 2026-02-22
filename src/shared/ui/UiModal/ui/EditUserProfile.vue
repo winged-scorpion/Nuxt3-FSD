@@ -2,8 +2,20 @@
 import { useUsers } from '~/features/Admin/store/users'
 
 const props = defineProps({
-  user: {
+  userId: {
     type: Number,
+    required: true,
+  },
+  login: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
     required: true,
   },
 })
@@ -11,10 +23,10 @@ const props = defineProps({
 const user = useUsers()
 
 const userUpdate = reactive({
-  id: props.user,
-  login: '',
-  email: '',
-  password: '',
+  id: props.userId,
+  login: props.login,
+  email: props.email,
+  password: props.password,
 })
 function submit() {
   user.updateUser(userUpdate)
