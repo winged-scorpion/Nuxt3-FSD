@@ -33,7 +33,7 @@ onMounted(() => {
     >
       <details>
         <summary>{{ question.name }}</summary>
-        <ol class="question__list">
+        <ol>
           <li
             v-for="(item, index) in question.list"
             :key="index"
@@ -78,6 +78,10 @@ onMounted(() => {
     justify-content: space-between;
     align-items: center;
     margin:5px 0;
+    padding: 0 5px;
+    &:hover{
+      background: rgb(95 158 160 / 9%);
+    }
   }
   span{
     display: flex;
