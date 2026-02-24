@@ -43,6 +43,11 @@ function editVideo(vId: number, d: string, l: string, i: string) {
       <span>
         <button
           class="svg-icon"
+        >
+          <ShowHideIcon />
+        </button>
+        <button
+          class="svg-icon"
           @click="editVideo(video.id, video.description, video.link, video.img)"
         >
           <EditIcon />
@@ -51,11 +56,6 @@ function editVideo(vId: number, d: string, l: string, i: string) {
           class="svg-icon"
         >
           <DeleteIcon />
-        </button>
-        <button
-          class="svg-icon"
-        >
-          <ShowHideIcon />
         </button>
       </span>
     </li>

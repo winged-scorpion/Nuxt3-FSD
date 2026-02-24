@@ -16,12 +16,16 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  linkAudio: {
+    type: String,
+    required: false,
+  },
 })
 
 const form = reactive({
   question: props.question,
   answer: props.answer,
-  linkAudio: '',
+  linkAudio: props.linkAudio,
 })
 
 function submit(){
