@@ -3,10 +3,12 @@ export interface Question {
   audio: string
   question: string
   time?: number
+  show: boolean
 }
 
 export interface QuestionFull {
   tag: string
   name: string
+  show: boolean
   list: Question[]
 }

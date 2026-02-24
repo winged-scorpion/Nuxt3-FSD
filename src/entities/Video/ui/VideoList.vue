@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DeleteIcon, EditIcon, UploadIcon } from '~/shared/ui/Icon'
+import {AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon} from '~/shared/ui/Icon'
 import { useVideos } from '~/entities/Video/store'
 import emitter from '~/shared/api/eventBus'
 import { EditVideo } from '~/shared/ui/UiModal'
@@ -13,13 +13,25 @@ function editVideo(vId: number, d: string, l: string, i: string) {
 
 <template>
   <div class="tabs-head">
-    <strong>Видео с It кухни</strong>
-    <button
-      class="svg-icon rotate180"
-      @click="videos.getVideo"
-    >
-      <UploadIcon />
-    </button>
+    <div class="group">
+      <strong>Видео с кухни</strong>
+      <button
+        class="svg-icon rotate180"
+        @click="videos.getVideo"
+      >
+        <UploadIcon />
+      </button>
+    </div>
+    <div class="group">
+      <strong>
+        Добавить видео
+      </strong>
+      <button
+        class="svg-icon"
+      >
+        <AddIcon />
+      </button>
+    </div>
   </div>
   <hr class="mb-5">
   <ul class="video">
@@ -27,7 +39,7 @@ function editVideo(vId: number, d: string, l: string, i: string) {
       v-for="(video, index) in videos.outVideo"
       :key="index"
     >
-      <span>{{ video.description }} </span>
+      <span>{{ index }}) {{ video.description }} </span>
       <span>
         <button
           class="svg-icon"
@@ -40,12 +52,22 @@ function editVideo(vId: number, d: string, l: string, i: string) {
         >
           <DeleteIcon />
         </button>
+        <button
+          class="svg-icon"
+        >
+          <ShowHideIcon />
+        </button>
       </span>
     </li>
   </ul>
 </template>
 
 <style scoped lang="scss">
+.group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .tabs-head{
   display: flex;
   align-items: center;
@@ -59,8 +81,7 @@ function editVideo(vId: number, d: string, l: string, i: string) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin:5px 0;
-    padding: 0 5px;
+    padding: 5px;
     &:hover{
       background: rgb(95 158 160 / 9%);
     }
