@@ -1,6 +1,6 @@
 import { getQuery } from 'h3'
 import { db } from '../db/sqlite-service'
-import { users } from '../schema/schema'
+import { users } from '~~/server/types/schema'
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)

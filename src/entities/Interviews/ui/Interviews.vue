@@ -2,7 +2,7 @@
 import { AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon } from '~/shared/ui/Icon'
 import { useInterviews } from '~/entities/Interviews/store/useInterviews'
 import emitter from '~/shared/api/eventBus'
-import {EditQuestion, EditQuestionTopic} from '~/shared/ui/UiModal'
+import { EditQuestion, EditQuestionTopic } from '~/shared/ui/UiModal'
 
 const interviews = useInterviews()
 const showHideIcon = ref(false)
@@ -13,49 +13,38 @@ function edit(tag: string, index: number, q: string, a: string, au: string) {
 function editTopic(tag: string, n: string) {
   emitter.emit('openModal', { components: EditQuestionTopic, props: { topic: tag, topicHead: n } })
 }
+
 function showHide() {
   showHideIcon.value = !showHideIcon.value
 }
-const del = [
-  {
-    tag: '',
-    name: '',
-    show: true,
-    list: [
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-    ],
-  },
-  {
-    tag: '',
-    name: '',
-    show: true,
-    list: [
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-    ],
-  },
-]
+function createTopic() {
+  interviews.createInterviewTopic()
+}
+// nuxt 4 typescript sqlite создать таблицу questions состоящую из множества массивов
+// [
+//     {
+//       tag: 'tag1',
+//       name: 'tag1',
+//       show: true,
+//       ilIndex: 1,
+//       list: [
+//         {
+//           question: '',
+//           answer: '',
+//           audio: '',
+//           show: true,
+//         },
+//         {
+//           question: '',
+//           answer: '',
+//           audio: '',
+//           show: true,
+//         },
+//       ],
+//     }
+//
+//     ]
+
 onMounted(() => {
 
 })
@@ -67,7 +56,7 @@ onMounted(() => {
       <strong>Вопросы-ответы</strong>
       <button
         class="svg-icon rotate180"
-        @click="interviews.getInterview()"
+        @click="interviews.getInterviewTest()"
       >
         <UploadIcon />
       </button>
@@ -78,6 +67,7 @@ onMounted(() => {
       </strong>
       <button
         class="svg-icon"
+        @click="createTopic"
       >
         <AddIcon />
       </button>

@@ -1,6 +1,6 @@
 import { defineEventHandler, readBody } from 'h3'
 import { db } from '../../db/sqlite-service'
-import type { NewUser } from '~~/server/schema/schema'
+import type { NewUser } from '~~/server/types/schema'
 
 export default defineEventHandler(async (event) => {
   const id = event.context.params?.id
