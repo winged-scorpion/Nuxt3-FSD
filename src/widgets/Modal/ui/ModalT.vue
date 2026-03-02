@@ -25,7 +25,6 @@ onUnmounted(() => {
   emitter.off('openModal', openModal)
   emitter.on('closedModal', closedModal)
 })
-
 </script>
 
 <template>
@@ -51,7 +50,20 @@ onUnmounted(() => {
   left: -20px;
   width: 20px;
   height: 20px;
-  background: #000;
+  background: #f6f6f6;
+  border-radius: 100%;
+  border: solid 1px rgb(95, 158, 160);
+  &:before,&:after{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: rgb(95, 158, 160);
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  &:before{transform: rotate(45deg);}
+  &:after{transform: rotate(-45deg);}
 }
 .shadow{
   background: rgb(95 158 160 / 40%);

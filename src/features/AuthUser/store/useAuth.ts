@@ -34,7 +34,7 @@ export const useAuth = defineStore('auth', {
   actions: {
     async userRegistration(reg: userData) {
       this.setRegMessage = null
-      const { data, error, status } = await useApiFetch('/api/user', {
+      const { data, error, status } = await useApiFetch('/api/user/user', {
         cache: 'no-cache',
         method: 'post',
         headers: {
@@ -55,7 +55,7 @@ export const useAuth = defineStore('auth', {
 
     async userAuth(auth: userData, noRedirect?: boolean) {
       this.setAuthMessage = null
-      const { data, error, status } = await useApiFetch(`/api/user?login=${auth.email}&password=${auth.password}`, {
+      const { data, error, status } = await useApiFetch(`/api/user/user?login=${auth.email}&password=${auth.password}`, {
         cache: 'no-cache',
         method: 'get',
         headers: {

@@ -1,6 +1,6 @@
 import { defineEventHandler, readBody } from 'h3'
-import { db, users } from '../db/sqlite-service'
-import type { NewUser } from '../schema/schema'
+import { db, users } from '../../db/sqlite-service'
+import type { NewUser } from '../../schema/schema'
 
 export default defineEventHandler(async (event) => {
   try {

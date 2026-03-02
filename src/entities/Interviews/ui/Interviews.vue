@@ -2,7 +2,7 @@
 import { AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon } from '~/shared/ui/Icon'
 import { useInterviews } from '~/entities/Interviews/store/useInterviews'
 import emitter from '~/shared/api/eventBus'
-import {EditQuestion, EditQuestionTopic} from '~/shared/ui/UiModal'
+import { AddQuestion, EditQuestion, EditQuestionTopic } from '~/shared/ui/UiModal'
 
 const interviews = useInterviews()
 const showHideIcon = ref(false)
@@ -13,49 +13,13 @@ function edit(tag: string, index: number, q: string, a: string, au: string) {
 function editTopic(tag: string, n: string) {
   emitter.emit('openModal', { components: EditQuestionTopic, props: { topic: tag, topicHead: n } })
 }
+function addQuestion() {
+  emitter.emit('openModal', { components: AddQuestion })
+}
 function showHide() {
   showHideIcon.value = !showHideIcon.value
 }
-const del = [
-  {
-    tag: '',
-    name: '',
-    show: true,
-    list: [
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-    ],
-  },
-  {
-    tag: '',
-    name: '',
-    show: true,
-    list: [
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-      {
-        question: '',
-        answer: '',
-        audio: '',
-        show: true,
-      },
-    ],
-  },
-]
+
 onMounted(() => {
 
 })
@@ -74,10 +38,11 @@ onMounted(() => {
     </div>
     <div class="group">
       <strong>
-        Создать тему
+        Создать вопрос
       </strong>
       <button
         class="svg-icon"
+        @click="addQuestion"
       >
         <AddIcon />
       </button>

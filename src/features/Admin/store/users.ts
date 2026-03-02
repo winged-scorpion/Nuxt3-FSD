@@ -30,7 +30,7 @@ export const useUsers = defineStore('users', {
       }
     },
     async deleteUser(user: userData) {
-      const { data, error, status } = await useApiFetch(`/api/user/${user.id}`, {
+      const { data, error, status } = await useApiFetch(`/api/user/user/${user.id}`, {
         cache: 'no-cache',
         method: 'DELETE',
         headers: {
@@ -44,7 +44,7 @@ export const useUsers = defineStore('users', {
       }
     },
     async updateUser(user: userData) {
-      const { data, error, status } = await useApiFetch(`/api/user/${user.id}`, {
+      const { data, error, status } = await useApiFetch(`/api/user/user/${user.id}`, {
         cache: 'no-cache',
         method: 'PUT',
         headers: {

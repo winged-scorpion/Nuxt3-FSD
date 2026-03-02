@@ -9,6 +9,6 @@ export interface Question {
 export interface QuestionFull {
   tag: string
   name: string
-  show: boolean
+  show: number
   list: Question[]
 }
