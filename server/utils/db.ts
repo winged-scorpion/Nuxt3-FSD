@@ -1,15 +1,16 @@
 import sqlite3 from 'sqlite3'
 
-const dbPath = process.env.DB_PATH || './server/db/database.sqlite';
+const dbPath = process.env.DB_PATH || './server/db/database.sqlite'
 
 export const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
-    console.error('Ошибка подключения к базе данных:', err);
-  } else {
-    console.log('Подключено к SQLite базе данных');
-    initializeDatabase();
+    console.error('Ошибка подключения к базе данных:', err)
   }
-});
+  else {
+    console.log('Подключено к SQLite базе данных')
+    initializeDatabase()
+  }
+})
 
 function initializeDatabase() {
   db.run(`
@@ -25,10 +26,10 @@ function initializeDatabase() {
     )
   `, (err) => {
     if (err) {
-      console.error('Ошибка создания таблицы:', err);
-    } else {
-      console.log('Таблица questions создана или уже существует');
+      console.error('Ошибка создания таблицы:', err)
     }
-  });
+    else {
+      console.log('Таблица questions создана или уже существует')
+    }
+  })
 }
-

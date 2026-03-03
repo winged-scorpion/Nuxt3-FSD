@@ -2,26 +2,46 @@
 import { AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon } from '~/shared/ui/Icon'
 import { useInterviews } from '~/entities/Interviews/store/useInterviews'
 import emitter from '~/shared/api/eventBus'
-import { AddQuestion, EditQuestion, EditQuestionTopic } from '~/shared/ui/UiModal'
+import { EditQuestionTopic, FormQuestion } from '~/shared/ui/UiModal'
+import {useApiFetch} from "~/shared/api/useApiFetch";
 
 const interviews = useInterviews()
 const showHideIcon = ref(false)
 
-function edit(tag: string, index: number, q: string, a: string, au: string) {
-  emitter.emit('openModal', { components: EditQuestion, props: { topic: tag, position: index, question: q, answer: a, linkAudio: au } })
+function edit(tag: string, id: string, q: string, a: string, au: string, sh: number) {
+  emitter.emit('openModal', { components: FormQuestion, props: { api: 'edit', topic: tag, position: id, question: q, answer: a, linkAudio: au, show: sh } })
 }
 function editTopic(tag: string, n: string) {
   emitter.emit('openModal', { components: EditQuestionTopic, props: { topic: tag, topicHead: n } })
 }
 function addQuestion() {
-  emitter.emit('openModal', { components: AddQuestion })
+  emitter.emit('openModal', { components: FormQuestion, props: { api: 'add' } })
 }
 function showHide() {
   showHideIcon.value = !showHideIcon.value
 }
 
-onMounted(() => {
+function deleteQuestion(item: string) {
+  interviews.deleteQuestion(item)
+}
 
+async function del() {
+  const {data, error, status} = await useApiFetch(`/api/delete`, {
+    cache: 'no-cache',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  if (data) {
+    if (data.success) {
+
+    }
+  }
+}
+
+onMounted(() => {
+  interviews.getInterview()
 })
 </script>
 
@@ -29,6 +49,7 @@ onMounted(() => {
   <div class="tabs-head">
     <div class="group">
       <strong>Вопросы-ответы</strong>
+
       <button
         class="svg-icon rotate180"
         @click="interviews.getInterview()"
@@ -75,12 +96,13 @@ onMounted(() => {
             </button>
             <button
               class="svg-icon"
-              @click="edit(question.tag, index, item.question, item.answer, item.audio)"
+              @click="edit(question.tag, item.id, item.question, item.answer, item.audio, item.show)"
             >
               <EditIcon />
             </button>
             <button
               class="svg-icon"
+              @click="deleteQuestion(item.id)"
             >
               <DeleteIcon />
             </button>

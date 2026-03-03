@@ -4,7 +4,9 @@ import type { QuestionFull } from '~/features/PreparationInterview/model'
 
 export interface interviewState {
   setInterviews: QuestionFull[] | null
+  setTagList: string[]
 }
+
 export interface Question {
   id: string
   question: string
@@ -16,10 +18,14 @@ export interface Question {
 export const useInterviews = defineStore('interviews', {
   state: (): interviewState => <interviewState>({
     setInterviews: null,
+    setTagList: [],
   }),
   getters: {
     outInterview: (state) => {
       return state.setInterviews
+    },
+    outTagList: (state) => {
+      return state.setTagList
     },
   },
   actions: {
@@ -33,31 +39,26 @@ export const useInterviews = defineStore('interviews', {
       })
       if (data) {
         this.setInterviews = data
+        data.forEach((item: QuestionFull) => {
+          this.setTagList.push(item.tag)
+        })
         return true
       }
       return false
     },
-    async addQuestion() {
-      const { data, error, status } = await useApiFetch('/api/question', {
+    async deleteQuestion(id: string) {
+      const { data, error, status } = await useApiFetch(`/api/question/${id}`, {
         cache: 'no-cache',
-        method: 'post',
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: {
-          id: 'test12',
-          question: 'вопрос тест',
-          answer: 'ответ тест',
-          audio: 'ссылка на аудио тест',
-          show: 1,
-          tag: 'вопрос тест',
-        },
       })
       if (data) {
-        this.setInterviews = data.questions
-        return true
+        if (data.success) {
+          await this.getInterview()
+        }
       }
-      return false
     },
   },
 })

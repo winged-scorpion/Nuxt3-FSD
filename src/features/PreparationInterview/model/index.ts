@@ -4,6 +4,7 @@ export interface Question {
   question: string
   time?: number
   show: boolean
+  id: string
 }
 
 export interface QuestionFull {

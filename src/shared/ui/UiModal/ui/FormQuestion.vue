@@ -1,17 +1,51 @@
 <script setup lang="ts">
 import { AddRoundIcon } from '~/shared/ui/Icon'
 import { useApiFetch } from '~/shared/api/useApiFetch'
+import { useInterviews } from '~/entities/Interviews/store/useInterviews'
+
+const props = defineProps({
+  api: {
+    type: String,
+    required: true,
+  },
+  topic: {
+    type: String,
+    required: false,
+  },
+  position: {
+    type: String,
+    required: false,
+  },
+  question: {
+    type: String,
+    required: false,
+  },
+  answer: {
+    type: String,
+    required: false,
+  },
+  linkAudio: {
+    type: String,
+    required: false,
+  },
+  show: {
+    type: Number,
+    required: false,
+  },
+})
+
+const interviews = useInterviews()
 
 const form = reactive({
-  question: '',
-  answer: '',
-  audio: '',
-  tag: '',
-  id: '',
+  question: props.question,
+  answer: props.answer,
+  audio: props.linkAudio,
+  tag: props.topic,
+  id: props.position,
   show: 0,
 })
 const newTagShow = ref(false)
-const tagList = ['html', 'javascript', 'typescript']
+const tagList: string[] = interviews.outTagList
 
 function generateRandomId(): string {
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -22,24 +56,35 @@ function generateRandomId(): string {
 
 async function submit() {
   form.id = generateRandomId()
-  const { data, error, status } = await useApiFetch('/api/question/question', {
-    cache: 'no-cache',
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: form,
-  })
-
-  if (status === 200) {
-    return true
+  if (props.api === 'add') {
+    const { data, error, status } = await useApiFetch('/api/question/question', {
+      cache: 'no-cache',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: form,
+    })
   }
-  return false
+  else {
+    const { data, error, status } = await useApiFetch(`/api/question/${props.id}`, {
+      cache: 'no-cache',
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: form,
+    })
+  }
 }
 function newTag() {
   newTagShow.value = !newTagShow.value
   tagList.push()
 }
+
+onMounted(() => {
+
+})
 </script>
 
 <template>
