@@ -11,18 +11,17 @@ export const db = new sqlite3.Database(dbPath, (err) => {
     initializeDatabase()
   }
 })
-
 function initializeDatabase() {
   db.run(`
     CREATE TABLE IF NOT EXISTS questions (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      question TEXT NOT NULL,
-      answer TEXT NOT NULL,
-      audio TEXT NOT NULL,
-      show BOOLEAN NOT NULL DEFAULT 1,
-      tag TEXT NOT NULL,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+       id TEXT NOT NULL,
+       question TEXT NOT NULL,
+       answer TEXT NOT NULL,
+       audio TEXT NOT NULL,
+       show INTEGER NOT NULL DEFAULT 1,
+       tag TEXT NOT NULL,
+       timeq INTEGER NOT NULL DEFAULT 1,
+       topic TEXT NOT NULL
     )
   `, (err) => {
     if (err) {

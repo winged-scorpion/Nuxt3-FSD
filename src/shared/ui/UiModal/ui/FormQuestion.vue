@@ -32,6 +32,10 @@ const props = defineProps({
     type: Number,
     required: false,
   },
+  time: {
+    type: Number,
+    required: false,
+  },
 })
 
 const interviews = useInterviews()
@@ -41,8 +45,10 @@ const form = reactive({
   answer: props.answer,
   audio: props.linkAudio,
   tag: props.topic,
+  topic: props.topic,
   id: props.position,
-  show: 0,
+  timeq: props.time,
+  show: props.show,
 })
 const newTagShow = ref(false)
 const tagList: string[] = interviews.outTagList
@@ -96,12 +102,12 @@ onMounted(() => {
         <v-text-field
           v-if="newTagShow"
           v-model="form.tag"
-          label="Новая тема"
+          label="Новый тег"
         />
         <v-select
           v-else
           v-model="form.tag"
-          label="Тема"
+          label="Тег"
           :items="tagList"
         />
         <div>
@@ -113,6 +119,16 @@ onMounted(() => {
           </button>
         </div>
       </div>
+      <v-text-field
+        v-model="form.topic"
+        required
+        label="Тема"
+      />
+      <v-number-input
+        v-model.number="form.timeq"
+        required
+        label="Базовое время на вопрос"
+      />
       <v-textarea
         v-model="form.question"
         required

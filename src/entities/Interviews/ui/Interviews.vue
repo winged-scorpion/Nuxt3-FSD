@@ -48,7 +48,7 @@ onMounted(() => {
 <template>
   <div class="tabs-head">
     <div class="group">
-      <strong>Вопросы-ответы</strong>
+      <strong><button @click="del">оаоаоаоаоа</button>Вопросы-ответы</strong>
 
       <button
         class="svg-icon rotate180"

@@ -30,7 +30,7 @@ export default defineEventHandler(async () => {
           else {
             const outQuestionItem = <QuestionFull>{}
             outQuestionItem.tag = questionItem.tag
-            outQuestionItem.name = questionItem.tag
+            outQuestionItem.name = questionItem.topic
             outQuestionItem.show = 1
             outQuestionItem.list = [questionItem]
             outQuestionFull.push(outQuestionItem)

@@ -3,6 +3,8 @@ export interface Question {
   question: string
   answer: string
   audio: string
-  show: boolean
+  show: number
   tag: string
+  timeq: boolean
+  topic: string
 }

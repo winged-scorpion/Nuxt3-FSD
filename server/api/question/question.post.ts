@@ -6,22 +6,23 @@ export default defineEventHandler(async (event) => {
     const body = await readBody<Question>(event)
 
     const stmt = db.prepare(`
-      INSERT INTO questions (question, answer, audio, show, tag, id)
-      VALUES (?, ?, ?, ?, ?, ?)
+      INSERT INTO questions (question, answer, audio, show, tag, timeq, topic, id)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `)
-
     stmt.run(
       body.question,
       body.answer,
       body.audio,
       body.show ? 1 : 0,
       body.tag,
+      body.timeq,
+      body.topic,
       body.id,
       (err: any) => {
         if (err) {
           throw createError({
             statusCode: 500,
-            statusMessage: `Ошибка сохранения: ${err.message}`,
+            message: `Ошибка сохранения: ${err.message}`,
           })
         }
       },

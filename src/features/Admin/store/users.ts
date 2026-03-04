@@ -18,7 +18,7 @@ export const useUsers = defineStore('users', {
   },
   actions: {
     async getAllUserData() {
-      const { data, error, status } = await useApiFetch(`/api/user?user=all`, {
+      const { data, error, status } = await useApiFetch(`/api/user/user?user=all`, {
         cache: 'no-cache',
         method: 'get',
         headers: {
