@@ -7,14 +7,6 @@ export interface interviewState {
   setTagList: string[]
 }
 
-export interface Question {
-  id: string
-  question: string
-  answer: string
-  audio: string
-  show: boolean
-  tag: string
-}
 export const useInterviews = defineStore('interviews', {
   state: (): interviewState => <interviewState>({
     setInterviews: null,
@@ -39,6 +31,7 @@ export const useInterviews = defineStore('interviews', {
       })
       if (data) {
         this.setInterviews = data
+        this.setTagList.length = 0
         data.forEach((item: QuestionFull) => {
           this.setTagList.push(item.tag)
         })

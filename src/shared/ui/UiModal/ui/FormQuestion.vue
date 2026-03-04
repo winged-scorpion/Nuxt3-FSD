@@ -73,7 +73,7 @@ async function submit() {
     })
   }
   else {
-    const { data, error, status } = await useApiFetch(`/api/question/${props.id}`, {
+    const { data, error, status } = await useApiFetch(`/api/question/${props.position}`, {
       cache: 'no-cache',
       method: 'put',
       headers: {

@@ -3,7 +3,6 @@ import { AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon } from '~/share
 import { useInterviews } from '~/entities/Interviews/store/useInterviews'
 import emitter from '~/shared/api/eventBus'
 import { EditQuestionTopic, FormQuestion } from '~/shared/ui/UiModal'
-import {useApiFetch} from "~/shared/api/useApiFetch";
 
 const interviews = useInterviews()
 const showHideIcon = ref(false)
@@ -25,21 +24,6 @@ function deleteQuestion(item: string) {
   interviews.deleteQuestion(item)
 }
 
-async function del() {
-  const {data, error, status} = await useApiFetch(`/api/delete`, {
-    cache: 'no-cache',
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  if (data) {
-    if (data.success) {
-
-    }
-  }
-}
-
 onMounted(() => {
   interviews.getInterview()
 })
@@ -48,8 +32,7 @@ onMounted(() => {
 <template>
   <div class="tabs-head">
     <div class="group">
-      <strong><button @click="del">оаоаоаоаоа</button>Вопросы-ответы</strong>
-
+      <strong>Вопросы-ответы</strong>
       <button
         class="svg-icon rotate180"
         @click="interviews.getInterview()"
