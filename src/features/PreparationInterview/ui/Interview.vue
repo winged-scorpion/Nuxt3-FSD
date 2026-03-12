@@ -71,7 +71,7 @@ function callAudio(question: Question | undefined) {
   Object.assign(itemQuestionArr,question)
   audioLink.value = question.audio
   asyncModalWithOptions = defineAsyncComponent({
-    loader: () => import('../../../shared/ui/BaseAudio/ui/Audio.vue'),
+    loader: () => import('~/shared/ui/BaseAudio/ui/Audio.vue'),
   })
 }
 

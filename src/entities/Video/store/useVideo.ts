@@ -17,18 +17,33 @@ export const useVideos = defineStore('videos', {
   },
   actions: {
     async getVideo() {
-      const { data, error, status } = await useApiFetch('/api/video', {
+      const { data, error, status } = await useApiFetch('/api/kitchen/video', {
         cache: 'no-cache',
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
         },
       })
-      if (status === 200) {
-        this.setVideo = data.video
+      if (data) {
+        console.log('data--------------------',data)
+        this.setVideo = data
         return true
       }
       return false
+    },
+    async deleteVideo(videoId: string) {
+      const { data, error, status } = await useApiFetch(`/api/kitchen/${videoId}`, {
+        cache: 'no-cache',
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      if (data) {
+        if (data.success) {
+          await this.getVideo()
+        }
+      }
     },
   },
 })

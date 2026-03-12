@@ -13,7 +13,16 @@ const props = defineProps({
 
 <template>
   <div class="video">
-    <div v-html="link" />
+    <iframe
+      width="560"
+      height="315"
+      :src="link"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    />
     <div class="description">
       {{ name }}
     </div>
@@ -29,5 +38,6 @@ const props = defineProps({
   max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  width:min-content;
 }
 </style>

@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import {AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon} from '~/shared/ui/Icon'
-import { useVideos } from '~/entities/Video/store'
+import { AddIcon, DeleteIcon, EditIcon, ShowHideIcon, UploadIcon } from '~/shared/ui/Icon'
+import { useVideos } from '~/entities/Video/store/useVideo'
 import emitter from '~/shared/api/eventBus'
-import { EditVideo } from '~/shared/ui/UiModal'
+import { AddVideo, EditVideo } from '~/shared/ui/UiModal'
 
 const videos = useVideos()
 
-function editVideo(vId: number, d: string, l: string, i: string) {
-  emitter.emit('openModal', { components: EditVideo, props: { videoId: vId, description: d, link: l, img: i } })
-}
 </script>
 
 <template>
@@ -28,6 +25,7 @@ function editVideo(vId: number, d: string, l: string, i: string) {
       </strong>
       <button
         class="svg-icon"
+        @click="emitter.emit('openModal', { components: AddVideo, props: null })"
       >
         <AddIcon />
       </button>
@@ -48,12 +46,13 @@ function editVideo(vId: number, d: string, l: string, i: string) {
         </button>
         <button
           class="svg-icon"
-          @click="editVideo(video.id, video.description, video.link, video.img)"
+          @click="emitter.emit('openModal', { components: EditVideo, props: { videoId: video.id, description: video.description, link: video.link, img: video.img } })"
         >
           <EditIcon />
         </button>
         <button
           class="svg-icon"
+          @click="videos.deleteVideo(video.id)"
         >
           <DeleteIcon />
         </button>

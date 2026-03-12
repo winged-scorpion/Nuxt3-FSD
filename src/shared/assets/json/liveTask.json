@@ -133,5 +133,9 @@
   [
     "Арифметическая прогрессия - это последовательность чисел, одинаково возрастающая от числа к числу на одну и ту же величину.\n\nНапишите функцию isArithmeticProgression(arr), которая принимает в качестве параметра массив чисел arr и возвращает true, если последовательность чисел, которую образуют элементы массива, является арифметической прогрессией, и false в противном случае.",
     ["function isArithmeticProgression(arr){\n        let test\n        let test2\n        let test3\n        for(let i = 0; arr.length >= i; i++){\n            if(isNaN(arr[i+1])) break\n            test = arr[i+1] - arr[i]\n            if(i === 0){\n                test2 = arr[i+1] - arr[i]\n            }\n            if(test !== test2){\n                test3 = false\n                break\n            }else{\n                test3 = true\n            }\n        }\n        return test3\n    }\n    console.log(isArithmeticProgression([3, 6, 9, 12, 15]))\n    console.log(isArithmeticProgression([1, 2, 4, 7, 11]))"]
+  ],
+  [
+    "Напишите функцию removeEverySecondOne(arr), которая принимает в качестве параметра массив arr и возвращает построенный на основе него новый массив, где удалён каждый второй элемент.",
+    ["function removeEverySecondOne(arr){\n  const result = []\n        arr.forEach((item, index)=>{\n            if(index % 2 === 0){\n                result.push(item)\n            }\n        })\n  return result\n}"]
   ]
 ]

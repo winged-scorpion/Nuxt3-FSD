@@ -19,7 +19,7 @@ export const useVideo = defineStore('video', {
     async getVideo() {
       if (this.setVideo)
         return false
-      const { data, error, status } = await useApiFetch('/api/video', {
+      const { data, error, status } = await useApiFetch('/api/kitchen/video', {
         cache: 'no-cache',
         method: 'get',
         headers: {
@@ -27,7 +27,7 @@ export const useVideo = defineStore('video', {
         },
       })
       if (status === 200) {
-        this.setVideo = data.video
+        this.setVideo = data
         return true
       }
       return false

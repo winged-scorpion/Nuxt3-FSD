@@ -1,4 +1,4 @@
-import { db } from '../../utils/db'
+import { db } from '../../utils/db-question'
 import type { Question } from '../../schema/question'
 
 export default defineEventHandler(async () => {

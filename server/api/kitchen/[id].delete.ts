@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     const db = await getDB()
 
     const result = await db.run(
-      'DELETE FROM questions WHERE id = ?',
+      'DELETE FROM videos WHERE id = ?',
       [id],
     )
 

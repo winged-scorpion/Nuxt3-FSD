@@ -4,5 +4,6 @@ import ItKitchen from './ui/ItKitchen.vue'
 import EditVideo from './ui/EditVideo.vue'
 import EditQuestionTopic from './ui/EditQuestionTopic.vue'
 import FormQuestion from './ui/FormQuestion.vue'
+import AddVideo from './ui/AddVideo.vue'
 
-export { EditUserProfile, LiveCode, ItKitchen, EditVideo, EditQuestionTopic, FormQuestion }
+export { EditUserProfile, LiveCode, ItKitchen, EditVideo, EditQuestionTopic, FormQuestion, AddVideo }

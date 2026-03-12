@@ -2,6 +2,7 @@
 import { AddRoundIcon } from '~/shared/ui/Icon'
 import { useApiFetch } from '~/shared/api/useApiFetch'
 import { useInterviews } from '~/entities/Interviews/store/useInterviews'
+import { generateId } from '~/shared/api/generateId'
 
 const props = defineProps({
   api: {
@@ -53,15 +54,8 @@ const form = reactive({
 const newTagShow = ref(false)
 const tagList: string[] = interviews.outTagList
 
-function generateRandomId(): string {
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  const randomLetter = letters.charAt(Math.floor(Math.random() * letters.length))
-  const randomNumber = Math.floor(Math.random() * 100000)
-  return `${randomLetter}${randomNumber}`
-}
-
 async function submit() {
-  form.id = generateRandomId()
+  form.id = generateId()
   if (props.api === 'add') {
     const { data, error, status } = await useApiFetch('/api/question/question', {
       cache: 'no-cache',
