@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import { NAVIGATION_LINK } from '~/app/route'
+import { useAuth } from '~/features/AuthUser/store/useAuth'
+
+const auth = useAuth()
+
+const admin = computed(() => {
+  if (auth.outAuth) {
+    return 'Админ'
+  }
+  else {
+    return 'Авторизация'
+  }
+})
 </script>
 
 <template>
@@ -10,7 +22,12 @@ import { NAVIGATION_LINK } from '~/app/route'
       :key="item.page"
       :to="item.page"
     >
-      {{ item.name }}
+      <span v-if="item.page !== '/admin'">
+        {{ item.name }}
+      </span>
+      <span v-else>
+        {{admin}}
+      </span>
     </NuxtLink>
   </nav>
 </template>

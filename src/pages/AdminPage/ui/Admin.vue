@@ -4,6 +4,6 @@ import { Admin } from '~/features/Admin'
 </script>
 
 <template>
-  <BaseH1 />
+  <BaseH1 head="Админка" />
   <Admin />
 </template>
