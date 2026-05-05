@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { h1Search } from '~/shared/api/base/h1Search'
 import { NAVIGATION_LINK } from '~/app/route'
 
 const props = defineProps({
@@ -8,6 +7,14 @@ const props = defineProps({
     required: false,
   },
 })
+
+function h1Search(url: string, arrLink: any) {
+  for (const key of arrLink) {
+    if (key.page === url) {
+      return key.h1
+    }
+  }
+}
 </script>
 
 <template>

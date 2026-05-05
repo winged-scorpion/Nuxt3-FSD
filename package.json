@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
-    "test": "vitest"
+    "test": "vitest",
+    "analyze": "fsd-crawler"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
@@ -25,16 +26,19 @@
     "@vitejs/plugin-vue-jsx": "^5.1.1",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
     "@yeger/vue-masonry-wall": "^5.0.15",
     "better-sqlite3": "^12.6.2",
     "drizzle-orm": "^0.45.1",
     "eventbusjs": "^0.2.0",
+    "jsdom": "^29.0.2",
     "mitt": "^3.0.1",
     "mongoose": "^9.2.0",
     "nuxt-directus": "^5.7.0",
     "nuxt-security": "^2.5.1",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
+    "test-utils": "^1.1.1",
     "unocss": "^66.5.10"
   },
   "devDependencies": {
@@ -47,6 +51,7 @@
     "@unocss/transformer-directives": "^0.59.4",
     "@unocss/transformer-variant-group": "^0.59.4",
     "eslint": "^9.16.0",
+    "fsd-crawler": "^1.0.11",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "nuxt": "^4.2.1",
